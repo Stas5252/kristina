@@ -1,0 +1,3783 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Кристина Diamond — стилист</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L85 35 L50 95 L15 35 Z' fill='none' stroke='%23171311' stroke-width='4'/%3E%3Cpath d='M15 35 L85 35 M30 35 L50 5 L70 35 M50 5 L50 95 M30 35 L50 95 L70 35' fill='none' stroke='%23171311' stroke-width='2'/%3E%3C/svg%3E">
+<meta name="description" content="Премиальный лендинг-визитка стилиста: услуги, портфолио и контакты.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3ede4;
+    --bg-secondary: #e7ddcf;
+    --surface: rgba(255, 255, 255, 0.64);
+    --surface-strong: rgba(255, 255, 255, 0.85);
+    --surface-dark: rgba(20, 18, 17, 0.76);
+    --text: #171311;
+    --text-soft: rgba(23, 19, 17, 0.72);
+    --text-inverse: #f8f4ee;
+    --line: rgba(23, 19, 17, 0.12);
+    --line-strong: rgba(23, 19, 17, 0.24);
+    --accent: #171311;
+    --accent-2: #171311;
+    --success: #466746;
+    --danger: #a54d4d;
+    --shadow: 0 24px 80px rgba(24, 18, 12, 0.12);
+    --shadow-soft: 0 10px 30px rgba(24, 18, 12, 0.08);
+    --hero-overlay-top: rgba(10, 10, 10, 0.18);
+    --hero-overlay-bottom: rgba(10, 10, 10, 0.68);
+    --radius: 28px;
+    --radius-sm: 18px;
+    --container: 1240px;
+    --nav-height: 80px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Manrope", sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-width: 320px;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--text);
+    background:
+      radial-gradient(circle at top left, rgba(255, 255, 255, 0.58), transparent 28%),
+      linear-gradient(180deg, #faf5ef 0%, var(--bg) 34%, #f0e8db 100%);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.2;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 110px 110px;
+    mask-image: radial-gradient(circle at center, black, transparent 78%);
+    z-index: -1;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .container {
+    width: min(var(--container), calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .section {
+    position: relative;
+    padding: 110px 0;
+    scroll-margin-top: 20px;
+  }
+
+  .section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), transparent 18%, transparent 82%, rgba(255, 255, 255, 0.12));
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    font-size: 10px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: currentColor;
+    opacity: 0.62;
+  }
+
+  .section-label::before {
+    content: "";
+    width: 34px;
+    height: 1px;
+    background: currentColor;
+  }
+
+  .display-title {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 6vw, 84px);
+    line-height: 0.94;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+  }
+
+  .display-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: inherit;
+  }
+
+  .lead {
+    color: var(--text-soft);
+    max-width: 48ch;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .site-shell {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .site-nav {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 60;
+    height: var(--nav-height);
+    background: transparent;
+    border-bottom: 1px solid rgba(23, 19, 17, 0.08);
+  }
+
+  .site-nav.is-scrolled {
+    background: transparent;
+    border-bottom-color: rgba(23, 19, 17, 0.08);
+    backdrop-filter: none;
+  }
+
+  .site-nav__inner {
+    width: min(var(--container), calc(100% - 48px));
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .brand {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    color: #ffffff !important;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: opacity 0.3s var(--ease);
+    text-decoration: none;
+  }
+
+  .brand:hover {
+    opacity: 0.8;
+  }
+
+  .brand__name {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 5vw, 32px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+    white-space: nowrap;
+    color: #ffffff !important;
+  }
+
+  .brand__role {
+    font-family: var(--font-main);
+    font-size: 8px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-top: 2px;
+    color: #ffffff !important;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    transition: color 0.24s var(--ease), opacity 0.24s var(--ease);
+  }
+
+  .site-nav.is-scrolled .nav-links a {
+    color: #ffffff !important;
+  }
+
+  .nav-links a:hover,
+  .site-nav.is-scrolled .nav-links a:hover {
+    color: var(--text);
+  }
+
+  .hero {
+    min-height: 100svh;
+    position: relative;
+    overflow: clip;
+    background: #161311;
+    color: var(--text-inverse);
+    display: grid;
+    align-items: stretch;
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .hero__media-image {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(120deg, #342820 0%, #171412 48%, #0f0e0d 100%);
+    background-size: cover;
+    background-position: center 22%;
+    transform: scale(1);
+    animation: heroZoom 8s var(--ease) forwards;
+  }
+
+  .hero__media-image.has-photo {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(0,0,0,0.1)), var(--hero-image);
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(10, 10, 10, 0.56) 0%, rgba(10, 10, 10, 0.28) 32%, rgba(10, 10, 10, 0.12) 58%, rgba(10, 10, 10, 0.18) 100%),
+      linear-gradient(180deg, rgba(10, 10, 10, 0.2) 0%, rgba(10, 10, 10, 0.06) 24%, rgba(10, 10, 10, 0.58) 100%);
+  }
+
+  .hero__grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.16;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.18) 0 1px, transparent 1px),
+      radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px),
+      radial-gradient(circle at 40% 70%, rgba(255, 255, 255, 0.1) 0 1px, transparent 1px);
+    background-size: 18px 18px, 22px 22px, 16px 16px;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    width: min(var(--container), calc(100% - 48px));
+    margin: 0 auto;
+    padding: calc(var(--nav-height) + 92px) 0 56px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-content: center;
+    min-height: 100svh;
+  }
+
+  .hero__content > div:first-child {
+    max-width: 680px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 238, 0.9);
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .hero__title {
+    font-family: var(--font-display);
+    font-size: clamp(42px, 12vw, 132px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    margin-bottom: 14px;
+    color: rgba(248, 244, 238, 0.98);
+    word-break: break-word;
+  }
+
+  .hero__title em {
+    color: rgba(248, 244, 238, 0.98);
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .hero__summary {
+    display: block;
+    max-width: 28ch;
+  }
+
+  .hero__summary::before {
+    display: none;
+  }
+
+  .hero__summary p {
+    color: rgba(248, 244, 238, 0.84);
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.55;
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+
+  .hero__support {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 18px;
+    margin-top: 22px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(248, 244, 238, 0.18);
+    max-width: 420px;
+  }
+
+  .hero__support-item {
+    display: grid;
+    gap: 4px;
+  }
+
+  .hero__support-label {
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 238, 0.52);
+  }
+
+  .hero__support-value {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 2.5vw, 34px);
+    line-height: 0.95;
+    color: rgba(248, 244, 238, 0.94);
+  }
+
+  .hero__aside {
+    display: grid;
+    gap: 18px;
+    justify-items: end;
+    align-self: end;
+    padding: 0 0 10px;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .hero__stat {
+    text-align: right;
+  }
+
+  .hero__stat-label {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 238, 0.56);
+    margin-bottom: 6px;
+  }
+
+  .hero__stat-value {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3.2vw, 40px);
+    line-height: 0.9;
+    color: rgba(248, 244, 238, 0.96);
+    text-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  }
+
+  .hero__scroll {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 238, 0.52);
+  }
+
+  .hero__scroll-line {
+    width: 1px;
+    height: 44px;
+    background: linear-gradient(180deg, rgba(248, 244, 238, 0.72), transparent);
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .about-copy {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 620px) minmax(300px, 420px);
+    column-gap: clamp(40px, 6vw, 96px);
+    row-gap: 20px;
+    align-items: start;
+  }
+
+  .about-copy .section-label {
+    grid-column: 1;
+    margin-bottom: 0;
+  }
+
+  .about-copy .display-title {
+    grid-column: 1;
+    max-width: 14ch;
+    margin-bottom: 0;
+    line-height: 1.0;
+  }
+
+  .about-copy .lead {
+    grid-column: 2;
+    max-width: 42ch;
+    padding-top: 48px;
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0.9;
+  }
+
+  .about-copy p + p {
+    margin-top: 16px;
+  }
+
+  .about-meta {
+    grid-column: 1 / -1;
+    margin-top: 8px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 26px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .media-frame {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    border-radius: 0 0 120px 0;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0)),
+      linear-gradient(145deg, #d6ccbc 0%, #b3987f 50%, #816a51 100%);
+  }
+
+  .media-frame--wide {
+    aspect-ratio: 3 / 2;
+    border-radius: 28px;
+  }
+
+  .media-frame.has-photo {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.1)), var(--frame-image);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .media-frame::before {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: inherit;
+  }
+
+  .media-frame__caption {
+    position: absolute;
+    left: 28px;
+    bottom: 24px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 238, 0.82);
+    line-height: 1.7;
+  }
+
+  .services-sticky {
+    position: relative;
+    z-index: 25;
+    background: rgba(243, 237, 228, 0.74);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    width: 100%;
+  }
+
+  .services-sticky::-webkit-scrollbar {
+    display: none;
+  }
+
+  .services-sticky__inner {
+    width: min(var(--container), calc(100% - 24px));
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .services-sticky__button {
+    border: none;
+    background: transparent;
+    color: var(--text-soft);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    flex-shrink: 0;
+    padding: 16px 18px;
+    white-space: nowrap;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.22s var(--ease);
+  }
+
+  .services-sticky__button:hover,
+  .services-sticky__button.is-active {
+    color: var(--text);
+    border-bottom-color: var(--text);
+  }
+
+  .services-section {
+    padding-top: 28px;
+    padding-bottom: 88px;
+  }
+
+  .services-list {
+    display: grid;
+    gap: 0;
+  }
+
+  .service-card {
+    display: grid;
+    gap: 24px;
+    padding: 52px 0;
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 20px;
+  }
+
+  .service-card:first-child {
+    padding-top: 28px;
+  }
+
+  .service-card__head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 22px;
+    align-items: end;
+  }
+
+  .service-card__index {
+    font-family: var(--font-display);
+    font-size: clamp(46px, 7vw, 92px);
+    line-height: 0.8;
+    color: var(--text);
+    opacity: 0.04;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  .service-card__title {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.6vw, 52px);
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+    margin-bottom: 12px;
+  }
+
+  .service-card__title em {
+    font-style: italic;
+    color: inherit;
+    font-weight: 300;
+  }
+
+  .service-card__summary {
+    color: var(--text-soft);
+    max-width: 40ch;
+  }
+
+  .service-card__price {
+    text-align: right;
+  }
+
+  .service-card__price-main {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 0.95;
+  }
+
+  .service-card__price-note {
+    display: block;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .service-card__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+    gap: 32px;
+    align-items: start;
+  }
+
+  .service-panel {
+    padding-top: 8px;
+  }
+
+  .service-panel__title {
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .service-panel__list,
+  .price-list {
+    list-style: none;
+  }
+
+  .service-panel__list li,
+  .price-list li {
+    position: relative;
+    padding: 14px 0 14px 18px;
+    border-bottom: 1px solid var(--line);
+    color: var(--text-soft);
+  }
+
+  .service-panel__list li::before,
+  .price-list li::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(23, 19, 17, 0.16);
+    box-shadow: 0 0 0 1px rgba(23, 19, 17, 0.16);
+  }
+
+  .price-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: baseline;
+  }
+
+  .price-list strong {
+    font-family: var(--font-display);
+    font-size: 24px;
+    line-height: 0.95;
+    color: var(--text);
+    white-space: nowrap;
+    font-weight: 400;
+  }
+
+  .service-footnote {
+    margin-top: 18px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .portfolio {
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.44), transparent 16%, transparent 84%, rgba(255, 255, 255, 0.16)),
+      linear-gradient(180deg, #efe8dd 0%, #f5efe6 100%);
+  }
+
+  .portfolio-head {
+    display: grid;
+    grid-template-columns: minmax(0, 860px) minmax(220px, 260px);
+    justify-content: start;
+    gap: clamp(32px, 7vw, 96px);
+    align-items: start;
+    margin-bottom: 34px;
+  }
+
+  .portfolio-head > div:first-child {
+    max-width: 860px;
+    display: grid;
+    gap: 18px;
+  }
+
+  .portfolio-head .display-title {
+    max-width: 13ch;
+    margin-bottom: 0;
+    line-height: 0.9;
+  }
+
+  .portfolio-head .lead {
+    max-width: 52ch;
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .portfolio-stat {
+    padding-top: 20px;
+    border-top: 1px solid var(--line-strong);
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .portfolio-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 0.9;
+    font-weight: 400;
+    margin-bottom: 8px;
+  }
+
+  .portfolio-stat span {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .portfolio-list,
+  .portfolio-overview,
+  .portfolio-style-list {
+    display: grid;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-row {
+    border-top: 1px solid var(--line);
+    padding: 28px 0;
+    overflow: hidden;
+  }
+
+  .portfolio-row__summary {
+    display: grid;
+    grid-template-columns: minmax(44px, 64px) minmax(0, 1fr) auto;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .portfolio-row__number {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .portfolio-row__title {
+    font-family: var(--font-display);
+    font-size: clamp(34px, 5vw, 56px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    font-weight: 400;
+  }
+
+  .portfolio-row__title em {
+    font-style: italic;
+    color: inherit;
+    font-weight: 300;
+  }
+
+  .portfolio-row__button {
+    border: 1px solid var(--line);
+    background: transparent;
+    padding: 14px 22px;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.22s var(--ease), border-color 0.22s var(--ease), transform 0.22s var(--ease);
+  }
+
+  .portfolio-row__preview {
+    display: none;
+  }
+
+  .portfolio-row__preview-thumb {
+    width: 82px;
+    aspect-ratio: 0.76;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(23, 19, 17, 0.08);
+    box-shadow: var(--shadow-soft);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08)),
+      linear-gradient(145deg, #e0dbd3 0%, #c9c2b7 52%, #8a8278 100%);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
+  }
+
+  .portfolio-row__preview-thumb.has-photo {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.12)), var(--portfolio-preview-image);
+  }
+
+  .portfolio-row__preview-thumb + .portfolio-row__preview-thumb {
+    margin-left: -18px;
+  }
+
+  .portfolio-row__button:hover {
+    background: rgba(255, 255, 255, 0.56);
+    border-color: var(--line-strong);
+    transform: translateY(-1px);
+  }
+
+  .portfolio-row__detail {
+    display: none;
+    padding-top: 0;
+    padding-left: 0;
+    overflow: hidden;
+  }
+
+  .portfolio-row.is-open .portfolio-row__detail {
+    display: block;
+    padding-top: 28px;
+  }
+
+  .portfolio-row__detail-inner {
+    display: grid;
+    gap: 28px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .portfolio-row.is-open .portfolio-row__preview-thumb {
+    opacity: 0.46;
+    transform: scale(0.96);
+  }
+
+  .portfolio-row__description {
+    max-width: 58ch;
+    color: var(--text-soft);
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .portfolio-style {
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
+    margin-top: 0;
+    overflow: hidden;
+  }
+
+  .portfolio-style__top {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 18px;
+    align-items: end;
+    margin-bottom: 18px;
+  }
+
+  .portfolio-style__number {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+  }
+
+  .portfolio-style__title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 0.96;
+    letter-spacing: -0.028em;
+    font-weight: 400;
+    margin-bottom: 6px;
+  }
+
+  .portfolio-style__description {
+    color: var(--text-soft);
+    max-width: 52ch;
+    margin-bottom: 24px;
+  }
+
+  .portfolio-carousel-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-self: end;
+    flex-shrink: 0;
+  }
+
+  .portfolio-carousel-button {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.22s var(--ease), transform 0.22s var(--ease), border-color 0.22s var(--ease);
+  }
+
+  .portfolio-carousel-button:hover {
+    background: rgba(255, 255, 255, 0.56);
+    border-color: var(--line-strong);
+    transform: translateY(-1px);
+  }
+
+  .portfolio-carousel-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .portfolio-carousel-button path {
+    stroke: var(--text);
+    fill: none;
+    stroke-width: 1.6;
+  }
+
+  .portfolio-carousel {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-carousel__track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(220px, 248px);
+    gap: 16px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 4px 4px 10px 0;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .portfolio-carousel__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .portfolio-card {
+    position: relative;
+    aspect-ratio: 0.7;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-soft);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.12), rgba(0,0,0,0.08)),
+      linear-gradient(145deg, #e0dbd3 0%, #c9c2b7 52%, #8a8278 100%);
+    transition: transform 0.45s var(--ease), box-shadow 0.45s var(--ease);
+  }
+
+  .portfolio-card.has-photo {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(0,0,0,0.1)), var(--portfolio-image);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .portfolio-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.16), transparent 34%, rgba(0,0,0,0.36));
+  }
+
+  .portfolio-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 20px 50px rgba(24, 18, 12, 0.16);
+  }
+
+  .portfolio-card__caption {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 1;
+  }
+
+  .portfolio-card__title {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(248, 244, 238, 0.84);
+    margin-bottom: 6px;
+  }
+
+  .portfolio-card__subtitle {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 0.95;
+    color: var(--text-inverse);
+  }
+
+  .contacts {
+    background:
+      radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 24%),
+      linear-gradient(135deg, #141313 0%, #111111 44%, #0c0c0c 100%);
+    color: var(--text-inverse);
+  }
+
+  .contacts-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    align-content: center;
+    gap: 18px;
+    min-height: 390px;
+    padding: 34px 0;
+  }
+
+  .contacts .lead {
+    color: rgba(248, 244, 238, 0.72);
+    max-width: 32ch;
+    margin: 0 auto;
+  }
+
+  .contacts .display-title {
+    max-width: 11.5ch;
+    margin: 0 auto;
+  }
+
+  .contacts-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 228px;
+    min-height: 52px;
+    padding: 14px 28px;
+    border: 1px solid rgba(248, 244, 238, 0.28);
+    color: rgba(248, 244, 238, 0.96);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    transition: transform 0.22s var(--ease), border-color 0.22s var(--ease), background 0.22s var(--ease);
+  }
+
+  .contacts-cta:hover {
+    transform: translateY(-2px);
+    border-color: rgba(248, 244, 238, 0.54);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .contacts-subline {
+    color: rgba(248, 244, 238, 0.42);
+    font-size: 14px;
+  }
+
+  .contacts-subline a {
+    color: rgba(248, 244, 238, 0.68);
+    transition: color 0.22s var(--ease);
+  }
+
+  .contacts-subline a:hover {
+    color: rgba(248, 244, 238, 0.96);
+  }
+
+  .footer {
+    padding: 52px 0 34px;
+    border-top: 1px solid rgba(23, 19, 17, 0.08);
+  }
+
+  .footer__inner {
+    width: min(var(--container), calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .footer__name {
+    font-family: var(--font-display);
+    font-size: 38px;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+
+  .footer__role {
+    margin-bottom: 18px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .footer__legal {
+    color: var(--text-soft);
+    font-size: 13px;
+    line-height: 1.8;
+    max-width: 34ch;
+  }
+
+  .footer__title {
+    margin-bottom: 16px;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .footer__list {
+    display: grid;
+    gap: 10px;
+  }
+
+  .footer__column {
+    display: grid;
+    gap: 22px;
+    align-content: start;
+  }
+
+  .footer__meta {
+    display: grid;
+    gap: 18px;
+  }
+
+  .footer__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .footer__social-link {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.46);
+    transition: transform 0.22s var(--ease), border-color 0.22s var(--ease), background 0.22s var(--ease);
+  }
+
+  .footer__social-link svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+  .footer__social-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+    background: rgba(255, 255, 255, 0.82);
+  }
+
+  .footer__list a,
+  .footer__list span {
+    color: var(--text-soft);
+    transition: color 0.22s var(--ease), transform 0.22s var(--ease);
+  }
+
+  .footer__list a:hover {
+    color: var(--text);
+    transform: translateX(4px);
+  }
+
+  .footer__bottom {
+    width: min(var(--container), calc(100% - 48px));
+    margin: 30px auto 0;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--text-soft);
+    font-size: 11px;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+  }
+
+  .fade-up.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .admin-trigger {
+    display: none !important;
+  }
+
+  .admin-trigger:hover {
+    transform: translateY(-2px);
+    background: #0f0c0b;
+  }
+
+  .admin-trigger__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-2);
+  }
+
+  .admin-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 85;
+    background: rgba(10, 10, 10, 0.32);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s var(--ease);
+  }
+
+  .admin-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .admin {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(540px, 100vw);
+    z-index: 95;
+    transform: translateX(100%);
+    transition: transform 0.32s var(--ease);
+    background: rgba(248, 245, 239, 0.98);
+    backdrop-filter: blur(22px);
+    border-left: 1px solid rgba(23, 19, 17, 0.08);
+    box-shadow: -24px 0 60px rgba(16, 12, 8, 0.08);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    max-height: 100svh;
+  }
+
+  .admin.is-open {
+    transform: translateX(0);
+  }
+
+  .admin__header {
+    padding: 18px 18px 14px;
+    border-bottom: 1px solid rgba(23, 19, 17, 0.08);
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .admin__title {
+    font-size: 26px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  .admin__subtitle {
+    display: block;
+    margin-top: 6px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-soft);
+  }
+
+  .admin__close {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+  }
+
+  .admin__toolbar {
+    padding: 14px 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-bottom: 1px solid rgba(23, 19, 17, 0.08);
+  }
+
+  .admin__scroll {
+    overflow-y: auto;
+    padding: 18px;
+    display: grid;
+    gap: 16px;
+  }
+
+  .admin__footer {
+    padding: 14px 18px 18px;
+    border-top: 1px solid rgba(23, 19, 17, 0.08);
+    display: grid;
+    gap: 10px;
+  }
+
+  .admin__status {
+    font-size: 12px;
+    color: var(--text-soft);
+  }
+
+  .admin-group {
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(23, 19, 17, 0.08);
+    border-radius: 20px;
+    padding: 16px;
+    display: grid;
+    gap: 14px;
+  }
+
+  .admin-group__title {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .admin-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .admin-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .field {
+    display: grid;
+    gap: 7px;
+  }
+
+  .field label {
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--text-soft);
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    width: 100%;
+    border: 1px solid rgba(23, 19, 17, 0.1);
+    border-radius: 14px;
+    padding: 12px 14px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--text);
+    resize: vertical;
+  }
+
+  .field textarea {
+    min-height: 92px;
+  }
+
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    outline: none;
+    border-color: rgba(23, 19, 17, 0.42);
+    box-shadow: 0 0 0 3px rgba(23, 19, 17, 0.12);
+  }
+
+  .admin-button {
+    border: 1px solid rgba(23, 19, 17, 0.12);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.84);
+    color: var(--text);
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: transform 0.18s var(--ease), background 0.18s var(--ease), border-color 0.18s var(--ease);
+  }
+
+  .admin-button:hover {
+    transform: translateY(-1px);
+    background: #ffffff;
+    border-color: rgba(23, 19, 17, 0.2);
+  }
+
+  .admin-button--dark {
+    background: var(--text);
+    color: var(--text-inverse);
+    border-color: transparent;
+  }
+
+  .admin-button--accent {
+    background: rgba(23, 19, 17, 0.08);
+    border-color: rgba(23, 19, 17, 0.14);
+  }
+
+  .admin-button--danger {
+    color: var(--danger);
+    border-color: rgba(165, 77, 77, 0.18);
+    background: rgba(165, 77, 77, 0.06);
+  }
+
+  .admin-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .admin-card-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .admin-card {
+    border: 1px solid rgba(23, 19, 17, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.78);
+    padding: 14px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .admin-card__head {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .admin-card__title {
+    font-family: var(--font-display);
+    font-size: 20px;
+    line-height: 1.1;
+  }
+
+  .admin-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .admin-add-section {
+    width: 100%;
+    padding: 16px;
+    border: 2px dashed rgba(23, 19, 17, 0.1);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-soft);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.22s var(--ease);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .admin-add-section:hover {
+    border-color: var(--text-soft);
+    background: rgba(255, 255, 255, 0.4);
+    color: var(--text);
+  }
+
+  .admin-note {
+    font-size: 12px;
+    color: var(--text-soft);
+  }
+
+  .json-editor {
+    min-height: 320px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  /* Carousel Indicators */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .carousel-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--line-strong);
+    opacity: 0.3;
+    transition: opacity 0.22s var(--ease), transform 0.22s var(--ease);
+  }
+
+  .carousel-dot.is-active {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--surface-strong);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s var(--ease);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .back-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.94);
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s var(--ease);
+    cursor: zoom-out;
+  }
+
+  .lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox__content {
+    max-width: 90vw;
+    max-height: 90vh;
+  }
+
+  .lightbox__content img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.56;
+      transform: scaleY(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scaleY(1.16);
+    }
+  }
+
+  @keyframes heroZoom {
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .about-grid,
+    .service-card__body,
+    .portfolio-head {
+      grid-template-columns: 1fr;
+    }
+
+    .hero__content {
+      padding-top: calc(var(--nav-height) + 48px);
+      min-height: max(760px, 100svh);
+    }
+
+    .hero__content > div:first-child {
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .hero__title {
+      font-size: clamp(64px, 9vw, 118px);
+    }
+
+    .footer__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .about-copy {
+      max-width: 820px;
+      display: block;
+    }
+
+    .about-copy .section-label {
+      margin-bottom: 18px;
+    }
+
+    .about-copy .display-title {
+      max-width: 9.2ch;
+      margin-bottom: 22px;
+      line-height: 0.92;
+    }
+
+    .about-copy .lead {
+      max-width: 42ch;
+      padding-top: 0;
+      font-size: 15px;
+      line-height: 1.68;
+    }
+
+    .about-meta {
+      margin-top: 26px;
+    }
+  }
+
+  @media (max-width: 900px) {
+    :root {
+      --nav-height: 96px;
+    }
+
+    .container,
+    .site-nav__inner,
+    .services-sticky__inner,
+    .footer__inner,
+    .footer__bottom {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 20px !important;
+      padding-right: 20px !important;
+      margin: 0 auto;
+    }
+
+    .site-nav {
+      height: var(--nav-height);
+    }
+
+    .site-nav__inner {
+      height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-content: center;
+      gap: 8px;
+      padding: 10px 0 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      gap: 8px 16px;
+      padding: 4px 0;
+    }
+
+    .nav-links::-webkit-scrollbar {
+      display: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      white-space: nowrap;
+      scroll-snap-align: start;
+    }
+
+    .hero__content {
+      width: min(var(--container), calc(100% - 32px));
+      padding-top: calc(var(--nav-height) + 28px);
+      padding-bottom: 40px;
+      gap: 18px;
+      min-height: calc(100svh - 2px);
+      align-content: end;
+    }
+
+    .hero__media-image {
+      background-position: center 14%;
+    }
+
+    .hero__content > div:first-child {
+      max-width: 360px;
+    }
+
+    .hero__title {
+      font-size: clamp(56px, 14vw, 88px);
+      max-width: 5.2ch;
+      margin-bottom: 12px;
+    }
+
+    .hero__summary {
+      max-width: 23ch;
+    }
+
+    .hero__summary p {
+      font-size: 15px;
+      line-height: 1.46;
+    }
+
+    .hero__support {
+      max-width: 280px;
+      gap: 8px 12px;
+      margin-top: 18px;
+      padding-top: 12px;
+    }
+
+    .hero__support-label {
+      font-size: 9px;
+    }
+
+    .hero__support-value {
+      font-size: 20px;
+    }
+
+    .about-meta {
+      gap: 10px 18px;
+    }
+
+    .services-section {
+      padding-top: 12px;
+      padding-bottom: 64px;
+    }
+
+    .services-sticky__inner {
+      width: calc(100% - 20px);
+      gap: 6px;
+    }
+
+    .services-sticky__inner {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 8px 4px;
+      gap: 4px;
+    }
+
+    .services-sticky__button {
+      padding: 8px 10px;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      flex: 0 1 auto;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .services-sticky__button.is-active {
+      background: var(--text);
+      color: var(--text-inverse);
+    }
+
+    .service-card {
+      padding: 42px 0;
+      gap: 20px;
+    }
+
+    .service-card:first-child {
+      padding-top: 18px;
+    }
+
+    .service-card__head {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 16px;
+    }
+
+    .service-card__price {
+      text-align: left;
+    }
+
+    .service-card__index {
+      font-size: clamp(36px, 10vw, 52px);
+    }
+
+    .service-card__title {
+      font-size: clamp(34px, 8vw, 44px);
+    }
+
+    .service-card__body {
+      gap: 24px;
+    }
+
+    .portfolio-head {
+      margin-bottom: 24px;
+      gap: 22px;
+    }
+
+    .portfolio-head .display-title {
+      max-width: 9.6ch;
+    }
+
+    .portfolio-head .lead {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .portfolio-row__summary {
+      grid-template-columns: 1fr;
+      align-items: start;
+      gap: 12px;
+    }
+
+    .portfolio-row__button {
+      justify-self: start;
+    }
+
+    .portfolio-row__preview-thumb {
+      width: 66px;
+      border-radius: 14px;
+    }
+
+    .portfolio-row__preview-thumb + .portfolio-row__preview-thumb {
+      margin-left: -14px;
+    }
+
+    .portfolio-style__top {
+      grid-template-columns: 1fr;
+    }
+
+    .portfolio-carousel__track {
+      grid-auto-columns: minmax(220px, 78vw);
+      gap: 14px;
+    }
+
+    .contacts-grid {
+      min-height: 360px;
+      padding: 24px 0;
+      gap: 24px;
+    }
+
+    .footer__bottom {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .footer__inner {
+      justify-items: center;
+      text-align: center;
+      gap: 28px;
+    }
+
+    .footer__column,
+    .footer__meta,
+    .footer__list {
+      justify-items: center;
+      text-align: center;
+    }
+
+    .footer__socials {
+      justify-content: center;
+    }
+
+    .footer__legal {
+      max-width: 34ch;
+      margin: 0 auto;
+    }
+
+    .footer__name {
+      font-size: 34px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    body {
+      font-size: 14px;
+    }
+
+    .section {
+      padding: 72px 0;
+    }
+
+    .hero {
+      min-height: 100svh;
+    }
+
+    .brand__name {
+      font-size: clamp(14px, 5.5vw, 22px);
+    }
+
+    .brand__role {
+      font-size: 8px;
+    }
+
+    .service-card {
+      padding: 36px 0;
+      gap: 18px;
+    }
+
+    .price-list li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .about-copy .display-title {
+      max-width: none;
+      font-size: clamp(32px, 12vw, 48px);
+    }
+
+    .hero__title {
+      font-size: clamp(32px, 13vw, 68px);
+      line-height: 0.88;
+      max-width: none;
+    }
+
+    .hero__summary p {
+      font-size: 14px;
+      line-height: 1.42;
+    }
+
+    .hero__support {
+      max-width: 220px;
+      gap: 8px 10px;
+      margin-top: 16px;
+      padding-top: 10px;
+    }
+
+    .hero__support-value {
+      font-size: 18px;
+    }
+
+    .hero__content {
+      padding-top: calc(var(--nav-height) + 24px);
+      padding-bottom: 32px;
+    }
+
+    .hero__content > div:first-child {
+      max-width: calc(100vw - 48px);
+    }
+
+    .hero__summary {
+      max-width: 20ch;
+    }
+
+    .hero__eyebrow {
+      padding: 5px 9px;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+    }
+
+    .about-meta {
+      justify-content: flex-start;
+      gap: 8px 16px;
+    }
+
+    .footer {
+      padding-bottom: 96px;
+    }
+
+    .footer__socials {
+      gap: 10px;
+    }
+
+    .footer__social-link {
+      width: 46px;
+      height: 46px;
+    }
+
+    .footer__bottom span {
+      max-width: 34ch;
+      margin: 0 auto;
+    }
+
+    .portfolio-row {
+      padding: 20px 0;
+    }
+
+    .portfolio-row__button {
+      width: fit-content;
+      justify-self: start;
+    }
+
+    .portfolio-row__number,
+    .portfolio-row__title,
+    .portfolio-row__description {
+      text-align: left;
+    }
+
+    .portfolio-row__preview {
+      justify-self: start;
+    }
+
+    .portfolio-row__preview-thumb:nth-child(n + 2) {
+      display: none;
+    }
+
+    .portfolio-carousel__track {
+      grid-auto-columns: 82vw;
+    }
+
+    .contacts .display-title {
+      max-width: 9.8ch;
+    }
+
+    .admin {
+      width: 100vw;
+    }
+
+    .admin-grid--2 {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+      animation: none !important;
+      transition-duration: 0.01ms !important;
+      transition-delay: 0ms !important;
+    }
+
+    .fade-up {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="site-shell" id="siteShell">
+    <nav class="site-nav" id="siteNav">
+      <div class="site-nav__inner">
+        <a href="#top" class="brand" id="brandLink">
+          <strong class="brand__name" id="brandName">Имя Фамилия</strong>
+          <span class="brand__role" id="brandRole">персональный стилист</span>
+        </a>
+        <ul class="nav-links" id="navLinks"></ul>
+      </div>
+    </nav>
+
+    <div id="app"></div>
+
+    <footer class="footer" id="footer"></footer>
+    
+    <div class="back-to-top" id="backToTop" aria-label="Наверх">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+      <div class="lightbox__content">
+        <img id="lightboxImage" src="" alt="Увеличенное изображение">
+      </div>
+    </div>
+
+    <!-- Модальное окно политики конфиденциальности -->
+    <div class="lightbox" id="privacyPolicyModal">
+      <div class="lightbox__content" style="background: white; padding: 40px; border-radius: 20px; max-width: 800px; max-height: 80vh; overflow-y: auto; color: #171311; cursor: default;" onclick="event.stopPropagation()">
+        <h2 style="font-family: var(--font-display); font-size: 32px; margin-bottom: 20px;">Политика конфиденциальности</h2>
+        <div style="font-size: 14px; line-height: 1.6; display: grid; gap: 15px;">
+          <p>Настоящая Политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных».</p>
+          <p><strong>1. Общие положения</strong><br>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных.</p>
+          <p><strong>2. Персональные данные</strong><br>Мы не собираем ваши данные через формы на этом сайте напрямую. Все взаимодействие происходит через внешние мессенджеры (Telegram, WhatsApp) в соответствии с их политиками безопасности.</p>
+          <p><strong>3. Использование данных</strong><br>Ваши контактные данные используются исключительно для связи с вами по вашему запросу и не передаются третьим лицам.</p>
+          <p><strong>4. Заключительные положения</strong><br>Вы можете получить любые разъяснения по интересующим вопросам, обратившись к Оператору через контакты, указанные в подвале сайта.</p>
+        </div>
+        <button class="admin-button" style="margin-top: 30px; width: 100%;" onclick="document.getElementById('privacyPolicyModal').classList.remove('is-open')">Понятно</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="admin-trigger" id="adminTrigger" type="button" aria-label="Открыть админку">
+    <span class="admin-trigger__dot"></span>
+    <span>Админка</span>
+  </button>
+
+  <div class="admin-overlay" id="adminOverlay"></div>
+  <aside class="admin" id="adminPanel" aria-hidden="true">
+    <div class="admin__header">
+      <div>
+        <div class="admin__title">Админка</div>
+        <span class="admin__subtitle">Редактирование сайта без правки HTML</span>
+      </div>
+      <button class="admin__close" id="adminClose" type="button" aria-label="Закрыть">✕</button>
+    </div>
+    <div class="admin__toolbar">
+      <button class="admin-button admin-button--dark" id="saveButton" type="button">Сохранить всё</button>
+      <button class="admin-button admin-button--danger" id="resetButton" type="button">Сбросить сайт</button>
+    </div>
+    <div class="admin__scroll" id="adminContent"></div>
+    <div class="admin__footer">
+      <div class="admin__status" id="adminStatus">Все изменения сохраняются автоматически в браузере.</div>
+    </div>
+  </aside>
+
+<script>
+  const STORAGE_KEY = "stylistLandingConfigV3";
+
+  const defaultConfig = {
+    site: {
+      title: "Кристина Diamond — стилист",
+      description: "Премиальный лендинг-визитка стилиста: услуги, портфолио и контакты.",
+      brandName: "Кристина Diamond",
+      brandRole: "персональный стилист",
+      nav: [
+        { label: "Обо мне", target: "about" },
+        { label: "Услуги", target: "services" },
+        { label: "Портфолио", target: "portfolio" },
+        { label: "Контакты", target: "contacts" }
+      ]
+    },
+    theme: {
+      accent: "#171311",
+      accent2: "#171311",
+      bg: "#f3ede4",
+      bgSecondary: "#e7ddcf",
+      text: "#171311",
+      heroOverlayTop: "rgba(10, 10, 10, 0.18)",
+      heroOverlayBottom: "rgba(10, 10, 10, 0.68)"
+    },
+    hero: {
+      eyebrow: "Персональный стилист",
+      title: "Кристина <em>Diamond</em>",
+      summary: "Персональная стилизация и fashion-съёмки с точной подачей, собранным кадром и продуманным образом.",
+      stats: [
+        { label: "Формат работы", value: "онлайн и офлайн" }
+      ],
+      backgroundImage: "IMG_9852 (1).JPG",
+      photoCardImage: "",
+      photoCardCaption: ""
+    },
+    about: {
+      sectionLabel: "01 — обо мне",
+      title: "Собираю образ так, чтобы он выглядел <em>дорого и точно</em>",
+      paragraphs: [
+        "Я работаю с личным стилем, fashion-съёмками, коммерческими образами и визуально точной подачей. Для меня важны пропорции, фактура, посадка и ощущение дорогого цельного образа.",
+        "В работе соединяю эстетику, характер клиента и задачу проекта: от персональной стилизации до контента для брендов и продуманных капсул под съёмки."
+      ],
+      meta: ["личный стиль", "съёмки / бренды / гардероб"],
+      image: "IMG_9852 (1).JPG",
+      imageCaption: ""
+    },
+    stickyNav: [
+      { label: "Съёмка", target: "service-shoot" },
+      { label: "Портфолио", target: "portfolio" },
+      { label: "Гардероб", target: "service-wardrobe" },
+      { label: "Капсула", target: "service-capsule" },
+      { label: "Шопинг", target: "service-shopping" },
+      { label: "Мероприятие", target: "service-event" },
+      { label: "Невесты", target: "service-bride" },
+      { label: "Бренды", target: "service-brands" }
+    ],
+    services: [
+      {
+        anchor: "service-shoot",
+        sectionLabel: "Услуга",
+        index: "01",
+        navLabel: "Съёмка",
+        title: "Стилизация <em>съёмки</em>",
+        summary: "Подбор образов и стилизация площадки под съемочный процесс с сохранением цельной визуальной истории.",
+        priceMain: "от 4 500 ₽",
+        priceNote: "за образ",
+        includes: [
+          "Подбор референсов образов под ваш запрос",
+          "Составление вариантов образов (~3 шт на каждый вариант) и согласование итогового",
+          "Выкуп вещей по утвержденным вариантам",
+          "Привоз на площадку, отпаривание, стилизация на вас"
+        ],
+        prices: [
+          { label: "1 образ", value: "4 500 ₽" },
+          { label: "2 образа", value: "6 000 ₽" },
+          { label: "Доп. образ", value: "+1 500 ₽" }
+        ],
+        footnote: "Стилизация для личных и коммерческих проектов"
+      },
+      {
+        anchor: "service-wardrobe",
+        sectionLabel: "Услуга",
+        index: "02",
+        navLabel: "Гардероб",
+        title: "Разбор <em>гардероба</em>",
+        summary: "Подробная работа с текущими вещами, сочетаниями и формированием нового визуального порядка.",
+        priceMain: "15 000 ₽",
+        priceNote: "полный разбор",
+        includes: [
+          "Разбор всех позиций (оставляем / убираем / выкидываем)",
+          "Составление новых сочетаний — от 30 луков",
+          "PDF-файл с образами и шопинг-листом",
+          "Совместный подбор 5 позиций по списку включен в стоимость"
+        ],
+        prices: [
+          { label: "Разбор гардероба", value: "15 000 ₽" }
+        ],
+        footnote: "Полный цикл работы с вашим стилем"
+      },
+      {
+        anchor: "service-capsule",
+        sectionLabel: "Услуга",
+        index: "03",
+        navLabel: "Капсула",
+        title: "Капсула <em>на сезон / в отпуск</em>",
+        summary: "Отбор вещей из гардероба и подбор недостающих позиций для создания взаимосочетаемой капсулы под ваш бюджет.",
+        priceMain: "от 7 500 ₽",
+        priceNote: "за проект",
+        includes: [
+          "Отбор вещей из гардероба под запрос",
+          "Подбор позиций для покупки под ваш бюджет",
+          "Стилизация всех образов деталями и аксессуарами",
+          "PDF-файл с готовыми вариантами образов"
+        ],
+        prices: [
+          { label: "Онлайн формат", value: "7 500 ₽" },
+          { label: "Оффлайн (визит к вам)", value: "9 500 ₽" }
+        ],
+        footnote: "Идеально для подготовки к сезону или поездке"
+      },
+      {
+        anchor: "service-shopping",
+        sectionLabel: "Услуга",
+        index: "04",
+        navLabel: "Шопинг",
+        title: "Шопинг-<em>сопровождение</em>",
+        summary: "Поиск конкретных вещей под конкретные образы в онлайн- или офлайн-формате.",
+        priceMain: "7 000 ₽",
+        priceNote: "до 10 вещей",
+        includes: [
+          "Можно приобрести услугу как после разбора гардероба, так и отдельно",
+          "Поиск конкретных вещей под конкретные образы",
+          "Формат онлайн или оффлайн на выбор"
+        ],
+        prices: [
+          { label: "До 10 вещей", value: "7 000 ₽" },
+          { label: "Каждая доп. позиция", value: "+500 ₽" }
+        ],
+        footnote: "Эффективный шопинг без лишних трат"
+      },
+      {
+        anchor: "service-event",
+        sectionLabel: "Услуга",
+        index: "05",
+        navLabel: "Мероприятие",
+        title: "Образ на <em>мероприятие</em>",
+        summary: "Подбор комплекта под событие, формат площадки и дресс-код с точной стилистикой.",
+        priceMain: "3 500 ₽",
+        priceNote: "+ выезд",
+        includes: [
+          "Обсуждение формата, дресс-кода и пожеланий",
+          "Подбор референсов и 3–5 вариантов на согласование",
+          "Заказ утвержденных вариантов",
+          "Совместная примерка"
+        ],
+        prices: [
+          { label: "Подбор образа", value: "3 500 ₽" },
+          { label: "Выезд на примерку", value: "+1 500 ₽" }
+        ],
+        footnote: "Точное попадание в дресс-код"
+      },
+      {
+        anchor: "service-bride",
+        sectionLabel: "Услуга",
+        index: "06",
+        navLabel: "Невесты",
+        title: "Стилизация <em>образа невесты</em>",
+        summary: "Комплексное сопровождение: от концепции до финальной примерки с аксессуарами.",
+        priceMain: "8 000 ₽",
+        priceNote: "полное ведение",
+        includes: [
+          "Обсуждение концепции, декора и визуала",
+          "Первая примерка (объезд салонов)",
+          "Вторая примерка (у швеи/ателье)",
+          "Третья — итоговая с финальным образом"
+        ],
+        prices: [
+          { label: "Полная стилизация", value: "8 000 ₽" }
+        ],
+        footnote: "Ваш идеальный образ в самый важный день"
+      },
+      {
+        anchor: "service-brands",
+        sectionLabel: "Услуга",
+        index: "07",
+        navLabel: "Бренды",
+        title: "Стилизация для <em>брендов</em>",
+        summary: "Коммерческий styling: мудборд, достилизация аксессуарами и сбор образов на площадке.",
+        priceMain: "5 000 ₽/час",
+        priceNote: "до 10 образов",
+        includes: [
+          "Составление мудборда съёмки под ваш запрос",
+          "Согласование достилизации вещей обувью и аксессуарами",
+          "Отпаривание и сбор образов на площадке на моделях"
+        ],
+        prices: [
+          { label: "До 10 образов", value: "5 000 ₽/ч" }
+        ],
+        footnote: "Профессиональный подход к контенту"
+      }
+    ],
+    portfolio: {
+      sectionLabel: "02 — портфолио",
+      title: "Портфолио по <em>разделам</em>",
+      description: "Выберите направление и откройте подборки внутри раздела.",
+      statNumber: "05",
+      statLabel: "основных направлений",
+      categories: [
+        {
+          number: "01",
+          eyebrow: "Направление",
+          title: "Женская <em>стилизация</em>",
+          description: "Съёмки под разное настроение и характер: от классики до более свободной и творческой подачи.",
+          styles: [
+            { title: "Классика", number: "01", description: "Собранные, чистые и строгие образы", items: [{ label: "Образ", image: "IMG_9852 (1).JPG" }] },
+            { title: "Кэжуал", number: "02", description: "Повседневная элегантность", items: [{ label: "Образ", image: "IMG_9852 (1).JPG" }] },
+            { title: "Спортшик", number: "03", description: "Динамика и стиль", items: [{ label: "Образ", image: "IMG_9852 (1).JPG" }] },
+            { title: "Женственность", number: "04", description: "Мягкость и силуэт", items: [{ label: "Образ", image: "IMG_9852 (1).JPG" }] },
+            { title: "Творчество", number: "05", description: "Эксперименты с формой", items: [{ label: "Образ", image: "IMG_9852 (1).JPG" }] }
+          ]
+        },
+        {
+          number: "02",
+          eyebrow: "Направление",
+          title: "Мужская <em>стилизация</em>",
+          description: "Чистые пропорции, фактуры и собранные городские силуэты без лишних деталей.",
+          styles: [
+            {
+              number: "01",
+              title: "Menswear",
+              description: "Сдержанная и фактурная мужская подача.",
+              items: [
+                { label: "Фото 01", subtitle: "Menswear", image: "IMG_9852 (1).JPG" },
+                { label: "Фото 02", subtitle: "Menswear", image: "IMG_9852 (1).JPG" }
+              ]
+            }
+          ]
+        },
+        {
+          number: "03",
+          eyebrow: "Направление",
+          title: "<em>Беременность</em>",
+          description: "Мягкая пластика силуэта, спокойная палитра и деликатная работа с объемом.",
+          styles: [
+            {
+              number: "01",
+              title: "Мягкая подача",
+              description: "Спокойный свет, чистый силуэт и деликатная подача.",
+              items: [
+                { label: "Фото 01", subtitle: "Soft mood", image: "IMG_9852 (1).JPG" },
+                { label: "Фото 02", subtitle: "Soft mood", image: "IMG_9852 (1).JPG" }
+              ]
+            }
+          ]
+        },
+        {
+          number: "04",
+          eyebrow: "Направление",
+          title: "Групповая <em>стилизация</em>",
+          description: "Несколько героев в одном визуальном ритме: съёмки, кампейны и совместные кадры.",
+          styles: [
+            {
+              number: "01",
+              title: "Кампания",
+              description: "Съёмка нескольких героев в одном визуальном ритме.",
+              items: [
+                { label: "Фото 01", subtitle: "Group styling", image: "IMG_9852 (1).JPG" },
+                { label: "Фото 02", subtitle: "Group styling", image: "IMG_9852 (1).JPG" }
+              ]
+            }
+          ]
+        },
+        {
+          number: "05",
+          eyebrow: "Направление",
+          title: "Стрит / <em>выездные съёмки</em>",
+          description: "Городской свет, динамика локации и свободная fashion-пластика в кадре.",
+          styles: [
+            {
+              number: "01",
+              title: "Street mood",
+              description: "Свет улицы, движение и более свободная fashion-подача.",
+              items: [
+                { label: "Фото 01", subtitle: "Street mood", image: "IMG_9852 (1).JPG" },
+                { label: "Фото 02", subtitle: "Street mood", image: "IMG_9852 (1).JPG" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    contacts: {
+      sectionLabel: "03 — связь",
+      title: "Готовы создать <em>образ мечты?</em>",
+      description: "Напишите в Telegram, чтобы обсудить формат работы, даты и задачу.",
+      note: "",
+      items: [
+        { label: "Instagram*", value: "@yourname", href: "#", newTab: true },
+        { label: "Telegram", value: "@username", href: "#", newTab: true },
+        { label: "VK", value: "vk.com/username", href: "#", newTab: true },
+        { label: "Телефон", value: "+7 900 000 00 00", href: "tel:+79000000000", newTab: false }
+      ]
+    },
+    footer: {
+      name: "Кристина\nDiamond",
+      role: "персональный стилист",
+      legal: "Самозанятый / ИП\nИНН: 000000000000\nОГРНИП: 000000000000000\n\nОплата производится физическим лицам.\nНДС не облагается.",
+      linksTitle: "Разделы",
+      contactsTitle: "Соцсети",
+      bottomLeft: "* Instagram — продукт компании Meta, признанной экстремистской организацией и запрещенной на территории РФ",
+      bottomRight: ""
+    }
+  };
+
+  let state = applyRuntimeState(loadConfig());
+  let activePortfolioIndex = -1;
+
+  const app = document.getElementById("app");
+  const footer = document.getElementById("footer");
+  const siteNav = document.getElementById("siteNav");
+  const navLinks = document.getElementById("navLinks");
+  const brandLink = document.getElementById("brandLink");
+  const brandName = document.getElementById("brandName");
+  const brandRole = document.getElementById("brandRole");
+  const adminTrigger = document.getElementById("adminTrigger");
+  const adminPanel = document.getElementById("adminPanel");
+  const adminOverlay = document.getElementById("adminOverlay");
+  const adminClose = document.getElementById("adminClose");
+  const adminContent = document.getElementById("adminContent");
+  const adminStatus = document.getElementById("adminStatus");
+  const saveButton = document.getElementById("saveButton");
+  const exportButton = document.getElementById("exportButton");
+  const importInput = document.getElementById("importInput");
+  const resetButton = document.getElementById("resetButton");
+  const copyConfigButton = document.getElementById("copyConfigButton");
+  const applyJsonButton = document.getElementById("applyJsonButton");
+  const fileHelper = document.createElement("input");
+  fileHelper.type = "file";
+  fileHelper.style.display = "none";
+  document.body.appendChild(fileHelper);
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function loadConfig() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return structuredClone(defaultConfig);
+      return mergeDeep(structuredClone(defaultConfig), JSON.parse(saved));
+    } catch (error) {
+      console.error(error);
+      return structuredClone(defaultConfig);
+    }
+  }
+
+  function mergeDeep(target, source) {
+    if (Array.isArray(target) && Array.isArray(source)) return source;
+    if (isObject(target) && isObject(source)) {
+      const result = { ...target };
+      for (const key of Object.keys(source)) {
+        result[key] = key in target ? mergeDeep(target[key], source[key]) : source[key];
+      }
+      return result;
+    }
+    return source;
+  }
+
+  function isObject(value) {
+    return value !== null && typeof value === "object" && !Array.isArray(value);
+  }
+
+  function normalizeImagePath(url) {
+    const value = String(url || "").trim();
+    if (!value) return "";
+    if (value.includes("IMG_9852 (1).JPG")) return "IMG_9852 (1).JPG";
+    if (value.includes("assets/portfolio/preview-")) return "IMG_9852 (1).JPG";
+    if (value.includes("preview (1).webp")) return "IMG_9852 (1).JPG";
+    if (value.includes("preview (2).webp")) return "IMG_9852 (1).JPG";
+    if (value.includes("preview (3).webp")) return "IMG_9852 (1).JPG";
+    if (value.includes("preview.webp")) return "IMG_9852 (1).JPG";
+    return value;
+  }
+
+  function hasAnyFragment(value, fragments) {
+    const source = String(value || "");
+    return fragments.some((fragment) => source.includes(fragment));
+  }
+
+  function migratePortfolio(portfolio) {
+    if (!portfolio || !Array.isArray(portfolio.categories)) {
+      return structuredClone(defaultConfig.portfolio);
+    }
+    if (portfolio.categories.every((category) => Array.isArray(category.styles))) {
+      return {
+        ...portfolio,
+        categories: portfolio.categories.map((category) => ({
+          ...category,
+          styles: (category.styles || []).map((style) => ({
+            ...style,
+            items: (style.items || []).map((item) => ({
+              ...item,
+              image: normalizeImagePath(item.image)
+            }))
+          }))
+        }))
+      };
+    }
+    return structuredClone(defaultConfig.portfolio);
+  }
+
+  function applyRuntimeState(nextState) {
+    const result = nextState;
+    result.portfolio = migratePortfolio(result.portfolio);
+
+    if (!result.site.title || hasAnyFragment(result.site.title, ["Имя Фамилия", "встроенная админка"])) {
+      result.site.title = "Кристина Diamond — стилист";
+    }
+    if (!result.site.description || hasAnyFragment(result.site.description, ["встроенная админка"])) {
+      result.site.description = "Премиальный лендинг-визитка стилиста: услуги, портфолио и контакты.";
+    }
+    if (!result.site.brandName || hasAnyFragment(result.site.brandName, ["Имя", "Фамилия"])) {
+      result.site.brandName = "Кристина Diamond";
+    }
+    if (!result.site.brandRole) {
+      result.site.brandRole = "персональный стилист";
+    }
+
+    if (!result.theme.accent || result.theme.accent === "#a88657") {
+      result.theme.accent = result.theme.text || "#171311";
+    }
+    if (!result.theme.accent2 || result.theme.accent2 === "#cfb28b") {
+      result.theme.accent2 = result.theme.text || "#171311";
+    }
+
+    if (!result.hero.eyebrow || result.hero.eyebrow === "Стилист по одежде") {
+      result.hero.eyebrow = "Персональный стилист";
+    }
+    if (!result.hero.title || hasAnyFragment(result.hero.title, ["Имя", "Фамилия"])) {
+      result.hero.title = "Кристина <em>Diamond</em>";
+    }
+    if (!result.hero.summary || hasAnyFragment(result.hero.summary, ["Лендинг собран как дорогая fashion-визитка"])) {
+      result.hero.summary = "Персональная стилизация и fashion-съёмки с точной подачей, собранным кадром и продуманным образом.";
+    }
+    if (!Array.isArray(result.hero.stats) || !result.hero.stats.length || (result.hero.stats.length === 2 && hasAnyFragment(result.hero.stats[0]?.label, ["Формат"]) && hasAnyFragment(result.hero.stats[1]?.label, ["Подача"]))) {
+      result.hero.stats = [{ label: "Формат работы", value: "онлайн и офлайн" }];
+    }
+    result.hero.backgroundImage = normalizeImagePath(result.hero.backgroundImage) || "IMG_9852 (1).JPG";
+    result.hero.photoCardImage = normalizeImagePath(result.hero.photoCardImage);
+
+    result.about.image = normalizeImagePath(result.about.image) || "IMG_9852 (1).JPG";
+
+    if (!result.portfolio.description || hasAnyFragment(result.portfolio.description, ["Выбираете нужное направление"])) {
+      result.portfolio.description = "Выберите направление и откройте подборки внутри раздела.";
+    }
+
+    if (!result.contacts.sectionLabel || hasAnyFragment(result.contacts.sectionLabel, ["контакты"])) {
+      result.contacts.sectionLabel = "03 — связь";
+    }
+    if (!result.contacts.title || hasAnyFragment(result.contacts.title, ["Контакты и", "соцсети"])) {
+      result.contacts.title = "Готовы создать <em>образ мечты?</em>";
+    }
+    if (!result.contacts.description || hasAnyFragment(result.contacts.description, ["Финальный блок сделан спокойно", "обсудим ваш запрос"])) {
+      result.contacts.description = "Напишите в Telegram, чтобы обсудить формат работы, даты и задачу.";
+    }
+    if (hasAnyFragment(result.contacts.note, ["ССЫЛКИ И НОМЕР"])) {
+      result.contacts.note = "";
+    }
+
+    if (!result.footer.name || hasAnyFragment(result.footer.name, ["Имя", "Фамилия"])) {
+      result.footer.name = "Кристина Diamond";
+    }
+    if (!result.footer.role) {
+      result.footer.role = "персональный стилист";
+    }
+    if (!result.footer.contactsTitle || result.footer.contactsTitle === "Контакты") {
+      result.footer.contactsTitle = "Соцсети";
+    }
+    result.footer.bottomRight = "";
+    if (!result.footer.bottomLeft || !hasAnyFragment(result.footer.bottomLeft, ["Meta", "Instagram"])) {
+      result.footer.bottomLeft = "* Instagram — продукт компании Meta, признанной экстремистской организацией и запрещенной на территории РФ";
+    }
+
+    return result;
+  }
+
+  function saveConfig(message = "Изменения сохранены в браузере.") {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    setStatus(message);
+  }
+
+  function setStatus(message, isError = false) {
+    adminStatus.textContent = message;
+    adminStatus.style.color = isError ? "var(--danger)" : "var(--text-soft)";
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function sanitizeRichText(html) {
+    return String(html ?? "")
+      .replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, "")
+      .replace(/on\w+="[^"]*"/gi, "")
+      .replace(/on\w+='[^']*'/gi, "");
+  }
+
+  function toLines(text) {
+    return String(text ?? "").split("\n").map((line) => escapeHtml(line)).join("<br>");
+  }
+
+  function imageStyle(url, variableName) {
+    if (!url) return "";
+    return `${variableName}: url('${String(url).replaceAll("'", "\\'")}');`;
+  }
+
+  function renderNav() {
+    brandName.innerHTML = toLines(state.site.brandName);
+    brandRole.textContent = state.site.brandRole;
+    navLinks.innerHTML = state.site.nav
+      .map((item) => `<li><a href="#${escapeHtml(item.target)}">${escapeHtml(item.label)}</a></li>`)
+      .join("");
+  }
+
+  function renderSite() {
+    document.title = state.site.title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) metaDescription.setAttribute("content", state.site.description);
+
+    document.documentElement.style.setProperty("--accent", state.theme.accent);
+    document.documentElement.style.setProperty("--accent-2", state.theme.accent2);
+    document.documentElement.style.setProperty("--bg", state.theme.bg);
+    document.documentElement.style.setProperty("--bg-secondary", state.theme.bgSecondary);
+    document.documentElement.style.setProperty("--text", state.theme.text);
+    document.documentElement.style.setProperty("--hero-overlay-top", state.theme.heroOverlayTop);
+    document.documentElement.style.setProperty("--hero-overlay-bottom", state.theme.heroOverlayBottom);
+
+    renderNav();
+
+    const servicesHtml = state.services.map(renderServiceCard);
+    const firstService = servicesHtml[0] || "";
+    const remainingServices = servicesHtml.slice(1).join("");
+
+    app.innerHTML = `
+      ${renderHero()}
+      ${renderAbout()}
+      ${renderServicesSticky()}
+      <section class="section services-section" style="padding-bottom: 0;">
+        <div class="container">${firstService}</div>
+      </section>
+      ${renderPortfolio()}
+      <section class="section services-section" style="padding-top: 0;">
+        <div class="container">
+          <div class="services-list">${remainingServices}</div>
+        </div>
+      </section>
+      ${renderContacts()}
+    `;
+
+    footer.innerHTML = renderFooter();
+    bindInteractiveElements();
+    revealOnScroll();
+  }
+
+  function renderApp() {
+    renderSite();
+    renderAdmin();
+  }
+
+  function renderHero() {
+    const support = state.hero.stats
+      .map((item) => `
+        <div class="hero__support-item">
+          <span class="hero__support-label">${escapeHtml(item.label)}</span>
+          <span class="hero__support-value">${escapeHtml(stripTags(item.value).replace(/\s+/g, " "))}</span>
+        </div>
+      `)
+      .join("");
+
+    return `
+      <header class="hero" id="top">
+        <div class="hero__media">
+          <div class="hero__media-image ${state.hero.backgroundImage ? "has-photo" : ""}" style="${imageStyle(state.hero.backgroundImage, "--hero-image")}"></div>
+          <div class="hero__overlay"></div>
+          <div class="hero__grain"></div>
+        </div>
+        <div class="hero__content fade-up">
+          <div>
+            <div class="hero__eyebrow">${escapeHtml(state.hero.eyebrow)}</div>
+            <h1 class="hero__title">${sanitizeRichText(state.hero.title)}</h1>
+            <div class="hero__summary">
+              <p>${escapeHtml(state.hero.summary)}</p>
+            </div>
+            ${support ? `<div class="hero__support">${support}</div>` : ""}
+          </div>
+        </div>
+      </header>
+    `;
+  }
+
+
+  function renderAbout() {
+    const paragraphs = state.about.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join("");
+    const meta = state.about.meta.map((m) => `<span>${escapeHtml(m)}</span>`).join("");
+
+    return `
+      <section class="section" id="about">
+        <div class="container about-grid fade-up">
+          <div class="about-copy">
+            <span class="section-label">${escapeHtml(state.about.sectionLabel)}</span>
+            <h2 class="display-title">${sanitizeRichText(state.about.title)}</h2>
+            <div class="lead">${paragraphs}</div>
+            <div class="about-meta">${meta}</div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderServicesSticky() {
+    const items = state.stickyNav
+      .map((item, index) => `
+        <button class="services-sticky__button ${index === 0 ? "is-active" : ""}" type="button" data-scroll-target="${escapeHtml(item.target)}">
+          ${escapeHtml(item.label)}
+        </button>
+      `)
+      .join("");
+
+    return `
+      <div class="services-sticky" id="services">
+        <div class="services-sticky__inner">${items}</div>
+      </div>
+    `;
+  }
+
+  function renderServices() {
+    return `
+      <section class="section services-section">
+        <div class="container">
+          <div class="services-list">
+            ${state.services.map(renderServiceCard).join("")}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function renderServiceCard(service) {
+    const includes = service.includes.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const prices = service.prices.map((item) => `<li><span>${escapeHtml(item.label)}</span><strong>${escapeHtml(item.value)}</strong></li>`).join("");
+
+    return `
+      <article class="service-card fade-up" id="${escapeHtml(service.anchor)}">
+        <div class="service-card__head">
+          <div class="service-card__index">${escapeHtml(service.index)}</div>
+          <div>
+            <span class="section-label">${escapeHtml(service.sectionLabel)}</span>
+            <h3 class="service-card__title">${sanitizeRichText(service.title)}</h3>
+            <p class="service-card__summary">${escapeHtml(service.summary)}</p>
+          </div>
+          <div class="service-card__price">
+            <span class="service-card__price-main">${escapeHtml(service.priceMain)}</span>
+            <span class="service-card__price-note">${escapeHtml(service.priceNote)}</span>
+          </div>
+        </div>
+        <div class="service-card__body">
+          <div class="service-panel">
+            <div class="service-panel__title">Что входит</div>
+            <ul class="service-panel__list">${includes}</ul>
+            <div class="service-footnote">${escapeHtml(service.footnote)}</div>
+          </div>
+          <div class="service-panel">
+            <div class="service-panel__title">Стоимость</div>
+            <ul class="price-list">${prices}</ul>
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderPortfolio() {
+    return `
+      <section class="section portfolio" id="portfolio">
+        <div class="container">
+          <div class="portfolio-head fade-up">
+            <div>
+              <span class="section-label">${escapeHtml(state.portfolio.sectionLabel)}</span>
+              <h2 class="display-title">${sanitizeRichText(state.portfolio.title)}</h2>
+              <p class="lead">${escapeHtml(state.portfolio.description)}</p>
+            </div>
+            <div class="portfolio-stat">
+              <strong>${escapeHtml(state.portfolio.statNumber)}</strong>
+              <span>${escapeHtml(state.portfolio.statLabel)}</span>
+            </div>
+          </div>
+          <div class="portfolio-overview">
+            ${state.portfolio.categories.map((category, index) => renderPortfolioCategory(category, index)).join("")}
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  function expandCarouselItems(items, minimum = 6) {
+    const normalized = (items || []).filter((item) => item && (item.image || item.label || item.subtitle));
+    if (!normalized.length) return [];
+    if (normalized.length >= minimum) return normalized;
+
+    const expanded = [...normalized];
+    while (expanded.length < minimum) {
+      const base = normalized[expanded.length % normalized.length];
+      expanded.push({
+        ...base,
+        label: `Фото ${String(expanded.length + 1).padStart(2, "0")}`,
+        subtitle: base.subtitle || base.label || ""
+      });
+    }
+    return expanded;
+  }
+
+  function renderPortfolioCategory(category, index) {
+    const isOpen = index === activePortfolioIndex;
+    const previewItems = (category.styles || [])
+      .flatMap((style) => expandCarouselItems(style.items))
+      .filter((item) => item && item.image)
+      .slice(0, 3);
+    const styles = (category.styles || []).map((style, styleIndex) => {
+      const items = expandCarouselItems(style.items);
+      const dots = items.map((_, idx) => `
+        <div class="carousel-dot ${idx === 0 ? "is-active" : ""}"></div>
+      `).join("");
+
+      return `
+        <div class="portfolio-style">
+          <div class="portfolio-style__top">
+            <div>
+              <span class="portfolio-style__number">${escapeHtml(style.number || String(styleIndex + 1).padStart(2, "0"))}</span>
+              <h4 class="portfolio-style__title">${escapeHtml(style.title)}</h4>
+              <p class="portfolio-style__description">${escapeHtml(style.description || "")}</p>
+            </div>
+            <div class="portfolio-carousel-controls">
+              <button class="portfolio-carousel-button" type="button" data-carousel-move="prev" data-carousel-id="portfolio-track-${index}-${styleIndex}" aria-label="Назад">
+                <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+              <button class="portfolio-carousel-button" type="button" data-carousel-move="next" data-carousel-id="portfolio-track-${index}-${styleIndex}" aria-label="Вперед">
+                <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </button>
+            </div>
+          </div>
+          <div class="portfolio-carousel">
+            <div class="portfolio-carousel__track" id="portfolio-track-${index}-${styleIndex}">
+              ${items.map((item) => `
+                <div class="portfolio-card ${item.image ? "has-photo" : ""}" style="${imageStyle(item.image, "--portfolio-image")}" data-lightbox="${escapeHtml(item.image)}">
+                  <div class="portfolio-card__caption">
+                    <span class="portfolio-card__title">${escapeHtml(item.label)}</span>
+                    <span class="portfolio-card__subtitle">${escapeHtml(item.subtitle)}</span>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+          <div class="carousel-dots" data-track-id="portfolio-track-${index}-${styleIndex}">${dots}</div>
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <div class="portfolio-row ${isOpen ? "is-open" : ""}" id="portfolio-row-${index}">
+        <div class="portfolio-row__summary">
+          <div class="portfolio-row__number">${escapeHtml(category.number || String(index + 1).padStart(2, "0"))}</div>
+          <h3 class="portfolio-row__title">${sanitizeRichText(category.title)}</h3>
+          ${previewItems.length ? `
+            <div class="portfolio-row__preview" aria-hidden="true">
+              ${previewItems.map((item) => `
+                <div class="portfolio-row__preview-thumb ${item.image ? "has-photo" : ""}" style="${imageStyle(item.image, "--portfolio-preview-image")}"></div>
+              `).join("")}
+            </div>
+          ` : ""}
+          <button class="portfolio-row__button" type="button" data-portfolio-toggle="${index}">
+            ${isOpen ? "Свернуть" : "Смотреть"}
+          </button>
+        </div>
+        <div class="portfolio-row__detail">
+          <div class="portfolio-row__detail-inner">
+            <p class="portfolio-row__description">${escapeHtml(category.description)}</p>
+            <div class="portfolio-style-list">${styles}</div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderContacts() {
+    const telegramItem = state.contacts.items.find((item) => /telegram/i.test(item.label)) || state.contacts.items[0];
+
+    return `
+      <section class="section contacts" id="contacts">
+        <div class="container contacts-grid fade-up">
+          <div>
+            <span class="section-label">${escapeHtml(state.contacts.sectionLabel)}</span>
+            <h2 class="display-title">${sanitizeRichText(state.contacts.title)}</h2>
+            <p class="lead">${escapeHtml(state.contacts.description)}</p>
+          </div>
+          ${telegramItem ? `
+            <a class="contacts-cta" href="${escapeHtml(telegramItem.href || "#")}" ${telegramItem.newTab ? 'target="_blank" rel="noreferrer noopener"' : ""}>
+              Написать в Telegram
+            </a>
+          ` : ""}
+          ${state.contacts.note ? `<div class="contacts-subline">${escapeHtml(state.contacts.note)}</div>` : ""}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderFooter() {
+    const siteLinks = state.site.nav.map((item) => `<a href="#${escapeHtml(item.target)}">${escapeHtml(item.label)}</a>`).join("");
+    function getSocialIcon(label) {
+      const normalized = (label || "").toLowerCase();
+      if (normalized.includes("instagram")) {
+        return `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.2" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
+            <circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
+            <circle cx="17.15" cy="6.85" r="1.15" fill="currentColor"></circle>
+          </svg>
+        `;
+      }
+      if (normalized.includes("telegram")) {
+        return `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M21.5 4.2 18.4 18.9c-.23 1.04-.84 1.3-1.7.81l-4.69-3.46-2.26 2.17c-.25.25-.46.46-.94.46l.34-4.82 8.78-7.93c.38-.34-.08-.54-.58-.2L6.49 13.78 1.82 12.32c-1.01-.32-1.03-1.01.21-1.49L20.3 3.8c.85-.32 1.58.2 1.2 1.4Z"></path>
+          </svg>
+        `;
+      }
+      if (normalized === "vk" || normalized.includes("vk")) {
+        return `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="currentColor" d="M5 7.5c.14 6.7 3.49 10.73 9.36 10.73h.33v-3.84c2.16.21 3.8 1.79 4.46 3.84H22c-.85-3.11-3.08-4.82-4.47-5.47 1.39-.8 3.34-2.74 3.81-5.26h-2.62c-.61 2.04-2.41 3.98-4.13 4.15V7.5h-2.62v7.26c-1.74-.43-3.94-2.52-4.04-7.26H5Z"></path>
+          </svg>
+        `;
+      }
+      if (normalized.includes("телефон") || normalized.includes("phone")) {
+        return `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.62 4.93c.34-.34.85-.46 1.3-.31l2.44.82c.56.19.89.77.77 1.35l-.52 2.49c-.07.34.04.7.3.95l2.8 2.8c.25.25.61.37.95.3l2.49-.52c.58-.12 1.16.2 1.35.77l.82 2.44c.15.45.03.96-.31 1.3l-1.09 1.09c-.74.74-1.84 1.04-2.86.78-2.56-.66-5.15-2.15-7.2-4.2-2.05-2.05-3.54-4.64-4.2-7.2-.26-1.02.04-2.12.78-2.86l1.09-1.09Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        `;
+      }
+      return `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.2" fill="currentColor"></circle>
+        </svg>
+      `;
+    }
+
+    const socialIcons = state.contacts.items.map((item) => {
+      const icon = getSocialIcon(item.label);
+      const attrs = item.href && item.href !== "#"
+        ? `href="${escapeHtml(item.href)}" ${item.newTab ? 'target="_blank" rel="noreferrer noopener"' : ""}`
+        : 'href="#"';
+      return `<a class="footer__social-link" ${attrs} aria-label="${escapeHtml(item.label)}">${icon}</a>`;
+    }).join("");
+
+    return `
+      <div class="footer__inner">
+        <div>
+          <div class="footer__name">${toLines(state.footer.name)}</div>
+          <div class="footer__role">${escapeHtml(state.footer.role)}</div>
+          <div class="footer__legal">${toLines(state.footer.legal)}</div>
+        </div>
+        <div class="footer__column">
+          <div class="footer__meta">
+            <div>
+              <div class="footer__title">${escapeHtml(state.footer.linksTitle)}</div>
+              <div class="footer__list">${siteLinks}</div>
+            </div>
+            <div>
+              <div class="footer__title">${escapeHtml(state.footer.contactsTitle)}</div>
+              <div class="footer__socials">${socialIcons}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span id="secretTrigger">${escapeHtml(state.footer.bottomLeft)}</span>
+          <a href="javascript:void(0)" onclick="document.getElementById('privacyPolicyModal').classList.add('is-open')" style="opacity: 0.6; text-decoration: underline;">Политика конфиденциальности</a>
+        </div>
+        ${state.footer.bottomRight ? `<span>${escapeHtml(state.footer.bottomRight)}</span>` : ""}
+      </div>
+    `;
+  }
+
+  function renderAdmin() {
+    adminContent.innerHTML = `
+      <div class="admin-section">
+        <h3 class="admin-title" style="color: var(--success)">🚀 Публикация на GitHub</h3>
+        <p class="admin-hint" style="margin-bottom: 12px">Чтобы все увидели ваши изменения на GitHub Pages, скачайте обновленный файл и загрузите его в репозиторий.</p>
+        <button class="admin-button admin-button--primary" type="button" data-action="download-html" style="width: 100%; background: var(--success); color: white; border: none; font-weight: 600;">
+          Скачать готовый файл index.html
+        </button>
+      </div>
+      ${renderSiteEditor()}
+      ${renderThemeEditor()}
+      ${renderHeroEditor()}
+      ${renderAboutEditor()}
+      ${renderServicesEditor()}
+      ${renderPortfolioEditor()}
+      ${renderContactsEditor()}
+      ${renderFooterEditor()}
+    `;
+
+    adminContent.querySelectorAll("[data-path]").forEach((field) => {
+      field.addEventListener("input", handleFieldInput);
+      field.addEventListener("change", handleFieldInput);
+    });
+
+    adminContent.querySelectorAll("[data-action]").forEach((button) => {
+      button.addEventListener("click", handleAdminAction);
+    });
+  }
+
+  function renderSiteEditor() {
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Сайт</div>
+        <div class="admin-grid">
+          ${field("Название вкладки", "site.title", state.site.title)}
+          ${textarea("Meta description", "site.description", state.site.description, 3)}
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${textarea("Имя бренда", "site.brandName", state.site.brandName, 2)}
+          ${field("Подпись бренда", "site.brandRole", state.site.brandRole)}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderThemeEditor() {
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Цвета</div>
+        <div class="admin-grid admin-grid--2">
+          ${colorField("Accent", "theme.accent", state.theme.accent)}
+          ${colorField("Accent 2", "theme.accent2", state.theme.accent2)}
+          ${colorField("Background", "theme.bg", state.theme.bg)}
+          ${colorField("Background secondary", "theme.bgSecondary", state.theme.bgSecondary)}
+          ${colorField("Text", "theme.text", state.theme.text)}
+          ${field("Hero overlay top", "theme.heroOverlayTop", state.theme.heroOverlayTop)}
+          ${field("Hero overlay bottom", "theme.heroOverlayBottom", state.theme.heroOverlayBottom)}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderHeroEditor() {
+    const stats = state.hero.stats.map((item, index) => `
+      <div class="admin-card">
+        <div class="admin-card__head">
+          <div class="admin-card__title">Статистика ${index + 1}</div>
+          <button class="admin-button admin-button--danger" type="button" data-action="remove-stat" data-index="${index}">Удалить</button>
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${field("Label", `hero.stats.${index}.label`, item.label)}
+          ${field("Value", `hero.stats.${index}.value`, item.value)}
+        </div>
+      </div>
+    `).join("");
+
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Hero</div>
+        <div class="admin-grid">
+          ${field("Eyebrow", "hero.eyebrow", state.hero.eyebrow)}
+          ${field("Title (HTML <em> разрешен)", "hero.title", state.hero.title)}
+          ${textarea("Summary", "hero.summary", state.hero.summary, 4)}
+        </div>
+        <div class="admin-grid">
+          ${field("Фоновое фото hero", "hero.backgroundImage", state.hero.backgroundImage)}
+        </div>
+        <div class="admin-card-list">${stats}</div>
+        <button class="admin-button" type="button" data-action="add-stat">Добавить статистику</button>
+      </section>
+    `;
+  }
+
+  function renderAboutEditor() {
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Обо мне</div>
+        <div class="admin-grid">
+          ${field("Section label", "about.sectionLabel", state.about.sectionLabel)}
+          ${field("Title (HTML <em> разрешен)", "about.title", state.about.title)}
+          ${textarea("Paragraphs (каждый абзац с новой строки)", "about.paragraphs", state.about.paragraphs.join("\n"), 6, "lines")}
+          ${textarea("Meta (каждая метка с новой строки)", "about.meta", state.about.meta.join("\n"), 4, "lines")}
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${field("Фото блока", "about.image", state.about.image)}
+          ${textarea("Подпись фото", "about.imageCaption", state.about.imageCaption, 3)}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderServicesEditor() {
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Услуги</div>
+        <div class="admin-card-list">
+          ${state.services.map((service, index) => renderServiceEditorCard(service, index)).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderServiceEditorCard(service, index) {
+    return `
+      <div class="admin-card">
+        <div class="admin-card__head">
+          <div class="admin-card__title">${escapeHtml(stripTags(service.title) || `Услуга ${index + 1}`)}</div>
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${field("Anchor", `services.${index}.anchor`, service.anchor)}
+          ${field("Nav label", `services.${index}.navLabel`, service.navLabel)}
+          ${field("Index", `services.${index}.index`, service.index)}
+          ${field("Section label", `services.${index}.sectionLabel`, service.sectionLabel)}
+        </div>
+        <div class="admin-grid">
+          ${field("Title (HTML <em> разрешен)", `services.${index}.title`, service.title)}
+          ${textarea("Summary", `services.${index}.summary`, service.summary, 3)}
+          ${textarea("Что входит (каждый пункт с новой строки)", `services.${index}.includes`, service.includes.join("\n"), 6, "lines")}
+          ${textarea("Цены (формат: Название|Цена, каждая строка отдельно)", `services.${index}.prices`, service.prices.map((item) => `${item.label}|${item.value}`).join("\n"), 5, "prices")}
+          ${textarea("Footnote", `services.${index}.footnote`, service.footnote, 3)}
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${field("Main price", `services.${index}.priceMain`, service.priceMain)}
+          ${field("Price note", `services.${index}.priceNote`, service.priceNote)}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderPortfolioEditor() {
+    const categories = state.portfolio.categories.map((cat, catIdx) => {
+      const styles = (cat.styles || []).map((style, styleIdx) => `
+        <div class="admin-card">
+          <div class="admin-card__head">
+            <div class="admin-card__title">Подраздел: ${escapeHtml(style.title || "Без названия")}</div>
+            <button class="admin-button admin-button--danger" type="button" 
+              data-action="remove-portfolio-style" 
+              data-cat-index="${catIdx}" 
+              data-style-index="${styleIdx}">Удалить</button>
+          </div>
+          <div class="admin-grid admin-grid--2">
+            ${field("Название", `portfolio.categories.${catIdx}.styles.${styleIdx}.title`, style.title)}
+            ${field("Номер", `portfolio.categories.${catIdx}.styles.${styleIdx}.number`, style.number)}
+          </div>
+          ${textarea("Описание", `portfolio.categories.${catIdx}.styles.${styleIdx}.description`, style.description, 2)}
+          <div class="admin-card-list">
+            ${(style.items || []).map((item, itemIdx) => `
+              <div class="admin-card">
+                <div class="admin-card__head">
+                  <div class="admin-card__title">Фото ${itemIdx + 1}</div>
+                  <button class="admin-button admin-button--danger" type="button" 
+                    data-action="remove-portfolio-item" 
+                    data-cat-index="${catIdx}" 
+                    data-style-index="${styleIdx}" 
+                    data-item-index="${itemIdx}">✕</button>
+                </div>
+                <div class="admin-grid">
+                  ${field("Путь к фото", `portfolio.categories.${catIdx}.styles.${styleIdx}.items.${itemIdx}.image`, item.image)}
+                  ${field("Подпись", `portfolio.categories.${catIdx}.styles.${styleIdx}.items.${itemIdx}.subtitle`, item.subtitle)}
+                </div>
+              </div>
+            `).join("")}
+          </div>
+          <button class="admin-button admin-add-section" type="button" 
+            data-action="add-portfolio-item" 
+            data-cat-index="${catIdx}" 
+            data-style-index="${styleIdx}">+ Добавить фото</button>
+        </div>
+      `).join("");
+
+      return `
+        <div class="admin-group">
+          <div class="admin-card__head">
+            <div class="admin-group__title">Раздел ${catIdx + 1}: ${escapeHtml(cat.title || "Без названия")}</div>
+            <button class="admin-button admin-button--danger" type="button" data-action="remove-portfolio-category" data-index="${catIdx}">Удалить раздел</button>
+          </div>
+          <div class="admin-grid">
+            ${field("Заголовок раздела", `portfolio.categories.${catIdx}.title`, cat.title)}
+            ${field("Номер", `portfolio.categories.${catIdx}.number`, cat.number)}
+            ${textarea("Описание", `portfolio.categories.${catIdx}.description`, cat.description, 2)}
+          </div>
+          <div class="admin-card-list">${styles}</div>
+          <button class="admin-button admin-add-section" type="button" data-action="add-portfolio-style" data-cat-index="${catIdx}">+ Добавить подраздел</button>
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Портфолио</div>
+        <div class="admin-grid">
+          ${field("Надпись секции", "portfolio.sectionLabel", state.portfolio.sectionLabel)}
+          ${field("Главный заголовок", "portfolio.title", state.portfolio.title)}
+          ${textarea("Описание секции", "portfolio.description", state.portfolio.description, 3)}
+        </div>
+        <div class="admin-card-list">${categories}</div>
+        <button class="admin-button admin-add-section" type="button" data-action="add-portfolio-category">+ Создать новый раздел</button>
+      </section>
+    `;
+  }
+
+  function renderContactsEditor() {
+    const items = state.contacts.items.map((item, index) => `
+      <div class="admin-card">
+        <div class="admin-card__head">
+          <div class="admin-card__title">${escapeHtml(item.label)}</div>
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${field("Label", `contacts.items.${index}.label`, item.label)}
+          ${field("Value", `contacts.items.${index}.value`, item.value)}
+          ${field("Href", `contacts.items.${index}.href`, item.href)}
+          ${selectField("Открывать в новой вкладке", `contacts.items.${index}.newTab`, item.newTab ? "true" : "false", [
+            { value: "false", label: "Нет" },
+            { value: "true", label: "Да" }
+          ])}
+        </div>
+      </div>
+    `).join("");
+
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Контакты</div>
+        <div class="admin-grid">
+          ${field("Section label", "contacts.sectionLabel", state.contacts.sectionLabel)}
+          ${field("Title (HTML <em> разрешен)", "contacts.title", state.contacts.title)}
+          ${textarea("Description", "contacts.description", state.contacts.description, 4)}
+          ${field("Note", "contacts.note", state.contacts.note)}
+        </div>
+        <div class="admin-card-list">${items}</div>
+      </section>
+    `;
+  }
+
+  function renderFooterEditor() {
+    return `
+      <section class="admin-group">
+        <div class="admin-group__title">Footer</div>
+        <div class="admin-grid">
+          ${textarea("Имя", "footer.name", state.footer.name, 2)}
+          ${field("Role", "footer.role", state.footer.role)}
+          ${textarea("Legal", "footer.legal", state.footer.legal, 7)}
+        </div>
+        <div class="admin-grid admin-grid--2">
+          ${field("Links title", "footer.linksTitle", state.footer.linksTitle)}
+          ${field("Contacts title", "footer.contactsTitle", state.footer.contactsTitle)}
+        </div>
+        <div class="admin-grid">
+          ${textarea("Bottom left", "footer.bottomLeft", state.footer.bottomLeft, 3)}
+          ${textarea("Bottom right", "footer.bottomRight", state.footer.bottomRight, 3)}
+        </div>
+      </section>
+    `;
+  }
+
+  // JSON editor removed as requested
+
+  function field(label, path, value) {
+    const isImage = path.toLowerCase().includes("image") || path.toLowerCase().includes("photo");
+    return `
+      <div class="field">
+        <label>${escapeHtml(label)}</label>
+        <div style="display: flex; gap: 8px;">
+          <input type="text" data-path="${escapeHtml(path)}" value="${escapeHtml(value ?? "")}" style="flex: 1;">
+          ${isImage ? `<button class="admin-button" type="button" data-action="pick-file" data-target="${escapeHtml(path)}" style="padding: 10px; font-size: 11px;">📁</button>` : ""}
+        </div>
+      </div>
+    `;
+  }
+
+  function colorField(label, path, value) {
+    return `
+      <div class="field">
+        <label>${escapeHtml(label)}</label>
+        <input type="color" data-path="${escapeHtml(path)}" value="${escapeHtml(value ?? "#000000")}">
+      </div>
+    `;
+  }
+
+  function textarea(label, path, value, rows = 4, mode = "text") {
+    return `
+      <div class="field">
+        <label>${escapeHtml(label)}</label>
+        <textarea class="${mode === "json" ? "json-editor" : ""}" rows="${rows}" data-mode="${mode}" data-path="${escapeHtml(path)}">${escapeHtml(value ?? "")}</textarea>
+      </div>
+    `;
+  }
+
+  function selectField(label, path, value, options) {
+    return `
+      <div class="field">
+        <label>${escapeHtml(label)}</label>
+        <select data-path="${escapeHtml(path)}">
+          ${options.map((option) => `<option value="${escapeHtml(option.value)}" ${option.value === value ? "selected" : ""}>${escapeHtml(option.label)}</option>`).join("")}
+        </select>
+      </div>
+    `;
+  }
+
+  function stripTags(text) {
+    return String(text || "").replace(/<[^>]*>/g, "").trim();
+  }
+
+  function bindInteractiveElements() {
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", handleAnchorClick);
+    });
+    footer.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener("click", handleAnchorClick);
+    });
+    document.querySelectorAll("[data-scroll-target]").forEach((button) => {
+      button.addEventListener("click", () => smoothScrollTo(button.dataset.scrollTarget));
+    });
+
+    document.querySelectorAll("[data-portfolio-toggle]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const nextIndex = Number(button.dataset.portfolioToggle || 0);
+        const shouldOpen = activePortfolioIndex !== nextIndex;
+        activePortfolioIndex = shouldOpen ? nextIndex : -1;
+        renderSite();
+        if (shouldOpen) {
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => smoothScrollTo(`portfolio-row-${nextIndex}`));
+          });
+        }
+      });
+    });
+
+    document.querySelectorAll("[data-carousel-move]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const track = document.getElementById(button.dataset.carouselId);
+        if (!track) return;
+        const step = track.clientWidth * 0.82;
+        const direction = button.dataset.carouselMove === "prev" ? -1 : 1;
+        track.scrollBy({ left: step * direction, behavior: reduceMotion ? "auto" : "smooth" });
+      });
+    });
+
+    document.querySelectorAll(".portfolio-carousel__track").forEach((track) => {
+      track.addEventListener("scroll", () => {
+        const dotsContainer = document.querySelector(`.carousel-dots[data-track-id="${track.id}"]`);
+        if (!dotsContainer) return;
+        const dots = dotsContainer.querySelectorAll(".carousel-dot");
+        const scrollIndex = Math.round(track.scrollLeft / track.clientWidth);
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("is-active", idx === scrollIndex);
+        });
+      }, { passive: true });
+    });
+
+    document.querySelectorAll("[data-lightbox]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const img = el.dataset.lightbox;
+        if (!img) return;
+        const modal = document.getElementById("lightbox");
+        const modalImg = document.getElementById("lightboxImage");
+        modalImg.src = img;
+        modal.classList.add("is-open");
+      });
+    });
+
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox) {
+      lightbox.addEventListener("click", () => lightbox.classList.remove("is-open"));
+    }
+
+    const btt = document.getElementById("backToTop");
+    if (btt) {
+      btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      window.addEventListener("scroll", () => {
+        btt.classList.toggle("is-visible", window.scrollY > 500);
+      }, { passive: true });
+    }
+
+    const secret = document.getElementById("secretTrigger");
+    if (secret) {
+      let clicks = 0;
+      secret.addEventListener("click", () => {
+        clicks++;
+        if (clicks >= 5) {
+          clicks = 0;
+          openAdmin();
+        }
+        setTimeout(() => clicks = 0, 2000);
+      });
+    }
+
+    adminContent.querySelectorAll("[data-action]").forEach((button) => {
+      button.addEventListener("click", handleAdminAction);
+    });
+  }
+
+  function handleAnchorClick(event) {
+    const href = event.currentTarget.getAttribute("href");
+    if (!href || !href.startsWith("#")) return;
+    event.preventDefault();
+    smoothScrollTo(href.slice(1));
+  }
+
+  function smoothScrollTo(id) {
+    const target = document.getElementById(id);
+    if (!target) return;
+    const offset = target.getBoundingClientRect().top + window.scrollY - 20;
+    window.scrollTo({ top: offset, behavior: reduceMotion ? "auto" : "smooth" });
+  }
+
+  function handleFieldInput(event) {
+    const element = event.currentTarget;
+    const path = element.dataset.path;
+    if (!path || path === "rawJson") return;
+    const mode = element.dataset.mode || "text";
+    let value = element.value;
+
+    if (mode === "lines") {
+      value = value.split("\n").map((line) => line.trim()).filter(Boolean);
+    } else if (mode === "prices") {
+      value = value
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean)
+        .map((line) => {
+          const [label, ...rest] = line.split("|");
+          return { label: (label || "").trim(), value: rest.join("|").trim() };
+        });
+    } else if (element.tagName === "SELECT" && (value === "true" || value === "false")) {
+      value = value === "true";
+    }
+
+    setByPath(state, path, value);
+    state.portfolio = migratePortfolio(state.portfolio);
+    syncStickyNavFromServices();
+    renderSite();
+    saveConfig("Изменение сохранено.");
+  }
+
+  function syncStickyNavFromServices() {
+    state.stickyNav = [
+      { label: state.services[0]?.navLabel || "Съёмка", target: state.services[0]?.anchor || "service-shoot" },
+      { label: "Портфолио", target: "portfolio" },
+      { label: state.services[1]?.navLabel || "Гардероб", target: state.services[1]?.anchor || "service-wardrobe" },
+      { label: state.services[2]?.navLabel || "Капсула", target: state.services[2]?.anchor || "service-capsule" },
+      { label: state.services[3]?.navLabel || "Шопинг", target: state.services[3]?.anchor || "service-shopping" },
+      { label: state.services[4]?.navLabel || "Мероприятие", target: state.services[4]?.anchor || "service-event" },
+      { label: state.services[5]?.navLabel || "Невесты", target: state.services[5]?.anchor || "service-bride" },
+      { label: state.services[6]?.navLabel || "Бренды", target: state.services[6]?.anchor || "service-brands" }
+    ];
+  }
+
+  function setByPath(object, path, value) {
+    const keys = path.split(".");
+    let current = object;
+    for (let index = 0; index < keys.length - 1; index += 1) {
+      const key = Number.isInteger(Number(keys[index])) ? Number(keys[index]) : keys[index];
+      current = current[key];
+    }
+    const finalKey = Number.isInteger(Number(keys[keys.length - 1])) ? Number(keys[keys.length - 1]) : keys[keys.length - 1];
+    current[finalKey] = value;
+  }
+
+  function handleAdminAction(event) {
+    const button = event.currentTarget;
+    const action = button.dataset.action;
+
+    if (action === "add-portfolio-category") {
+      state.portfolio.categories.push({
+        number: String(state.portfolio.categories.length + 1).padStart(2, "0"),
+        eyebrow: "Направление",
+        title: "Новый раздел",
+        description: "Описание раздела",
+        styles: []
+      });
+      renderApp();
+      saveConfig("Раздел добавлен.");
+      return;
+    }
+
+    if (action === "remove-portfolio-category") {
+      if (confirm("Удалить этот раздел и всё его содержимое?")) {
+        state.portfolio.categories.splice(Number(button.dataset.index), 1);
+        renderApp();
+        saveConfig("Раздел удален.");
+      }
+      return;
+    }
+
+    if (action === "add-portfolio-style") {
+      const catIdx = Number(button.dataset.catIndex);
+      state.portfolio.categories[catIdx].styles.push({
+        number: "01",
+        title: "Новый подраздел",
+        description: "Краткое описание",
+        items: []
+      });
+      renderApp();
+      saveConfig("Подраздел добавлен.");
+      return;
+    }
+
+    if (action === "remove-portfolio-style") {
+      const catIdx = Number(button.dataset.catIndex);
+      const styleIdx = Number(button.dataset.styleIndex);
+      state.portfolio.categories[catIdx].styles.splice(styleIdx, 1);
+      renderApp();
+      saveConfig("Подраздел удален.");
+      return;
+    }
+
+    if (action === "add-portfolio-item") {
+      const catIdx = Number(button.dataset.catIndex);
+      const styleIdx = Number(button.dataset.styleIndex);
+      state.portfolio.categories[catIdx].styles[styleIdx].items.push({
+        label: "Фото",
+        subtitle: "Подпись",
+        image: ""
+      });
+      renderApp();
+      saveConfig("Карточка добавлена.");
+      return;
+    }
+
+    if (action === "download-html") {
+      downloadUpdatedHtml();
+      return;
+    }
+
+    if (action === "remove-portfolio-item") {
+      const catIdx = Number(button.dataset.catIndex);
+      const styleIdx = Number(button.dataset.styleIndex);
+      const itemIndex = Number(button.dataset.itemIndex);
+      state.portfolio.categories[catIdx].styles[styleIdx].items.splice(itemIndex, 1);
+      renderApp();
+      saveConfig("Карточка удалена.");
+      return;
+    }
+
+    if (action === "add-stat") {
+      state.hero.stats.push({ label: "Новый показатель", value: "Значение" });
+      renderApp();
+      saveConfig("Показатель добавлен.");
+      return;
+    }
+
+    if (action === "remove-stat") {
+      state.hero.stats.splice(Number(button.dataset.index), 1);
+      renderApp();
+      saveConfig("Показатель удален.");
+      return;
+    }
+
+    if (action === "pick-file") {
+      const targetPath = button.dataset.target;
+      fileHelper.onchange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const input = adminContent.querySelector(`[data-path="${targetPath}"]`);
+          if (input) {
+            input.value = file.name;
+            input.dispatchEvent(new Event("change"));
+          }
+        }
+      };
+      fileHelper.click();
+    }
+  }
+
+  function revealOnScroll() {
+    const elements = document.querySelectorAll(".fade-up");
+    if (reduceMotion) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.15 });
+
+    elements.forEach((element) => observer.observe(element));
+  }
+
+  function updateActiveStickyNav() {
+    const buttons = [...document.querySelectorAll(".services-sticky__button")];
+    const targets = buttons.map((button) => document.getElementById(button.dataset.scrollTarget)).filter(Boolean);
+    const focusLine = siteNav.offsetHeight + 70;
+
+    buttons.forEach((button) => button.classList.remove("is-active"));
+    targets.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top <= focusLine && rect.bottom > focusLine) {
+        const active = buttons.find((button) => button.dataset.scrollTarget === section.id);
+        if (active) active.classList.add("is-active");
+      }
+    });
+  }
+
+  function handleScroll() {
+    updateActiveStickyNav();
+  }
+
+  function openAdmin() {
+    if (adminPanel.classList.contains("is-open")) return;
+    const password = prompt("Введите пароль администратора:");
+    if (password === null) return; 
+    if (password !== "admin") {
+      alert("Неверный пароль.");
+      window.location.hash = "";
+      return;
+    }
+    adminPanel.classList.add("is-open");
+    adminOverlay.classList.add("is-open");
+    adminPanel.setAttribute("aria-hidden", "false");
+  }
+
+  function closeAdmin() {
+    adminPanel.classList.remove("is-open");
+    adminOverlay.classList.remove("is-open");
+    adminPanel.setAttribute("aria-hidden", "true");
+  }
+
+  let brandTapTimes = [];
+
+  adminTrigger.addEventListener("click", openAdmin);
+  adminClose.addEventListener("click", closeAdmin);
+  adminOverlay.addEventListener("click", closeAdmin);
+  if (brandLink) {
+    brandLink.addEventListener("pointerup", (event) => {
+      if (event.pointerType !== "touch") return;
+      const now = Date.now();
+      brandTapTimes = brandTapTimes.filter((time) => now - time < 700);
+      brandTapTimes.push(now);
+      if (brandTapTimes.length >= 3) {
+        brandTapTimes = [];
+        event.preventDefault();
+        openAdmin();
+      }
+    });
+  }
+  document.addEventListener("keydown", (event) => {
+    if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "a") {
+      event.preventDefault();
+      openAdmin();
+      return;
+    }
+    if (event.key === "Escape") closeAdmin();
+  });
+
+  saveButton.addEventListener("click", () => saveConfig("Конфигурация сохранена."));
+
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#admin") openAdmin();
+    if (!window.location.hash) closeAdmin();
+  });
+
+  if (window.location.hash === "#admin") openAdmin();
+
+  if (resetButton) {
+    resetButton.addEventListener("click", () => {
+      if (confirm("Вы уверены? Это сбросит все ваши изменения до заводских настроек.")) {
+        state = applyRuntimeState(structuredClone(defaultConfig));
+        renderApp();
+        saveConfig("Конфигурация сброшена.");
+      }
+    });
+  }
+
+  function downloadUpdatedHtml() {
+    const jsonState = JSON.stringify(state, null, 2);
+    const pattern = /const defaultConfig = \{[\s\S]*?\};/;
+    const replacement = `const defaultConfig = ${jsonState};`;
+    
+    fetch(window.location.href)
+      .then(response => response.text())
+      .then(html => {
+        let updatedHtml = html.replace(pattern, replacement);
+        // Также сбрасываем localStorage в самом коде файла, чтобы при открытии нового файла загружались новые данные
+        const storageKeyPattern = /const saved = localStorage\.getItem\(STORAGE_KEY\);/;
+        updatedHtml = updatedHtml.replace(storageKeyPattern, "const saved = null; // Forced reset for new file");
+
+        const blob = new Blob([updatedHtml], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "index.html";
+        a.click();
+        URL.revokeObjectURL(url);
+        saveConfig("Файл готов! Теперь замените старый index.html этим файлом.");
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Ошибка при создании файла. Попробуйте другой браузер или проверьте консоль.");
+      });
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", updateActiveStickyNav);
+
+  renderApp();
+  handleScroll();
+</script>
+</body>
+</html>
