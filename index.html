@@ -476,6 +476,11 @@
     line-height: 1.0;
   }
 
+  .about-copy .display-title em {
+    font-style: normal;
+    font-weight: inherit;
+  }
+
   .about-copy .lead {
     grid-column: 2;
     max-width: 42ch;
@@ -2192,9 +2197,9 @@
     hero: {
       eyebrow: "Персональный стилист",
       title: "Кристина <em>Diamond</em>",
-      summary: "Персональная стилизация и fashion-съёмки с точной подачей, собранным кадром и продуманным образом.",
+      summary: "Персональная стилизация и модные съёмки с точной подачей, собранным кадром и продуманным образом.",
       stats: [
-        { label: "Формат работы", value: "онлайн и офлайн" }
+        { label: "Формат работы", value: "онлайн и оффлайн" }
       ],
       backgroundImage: "IMG_9852 (1).JPG",
       photoCardImage: "",
@@ -2202,9 +2207,9 @@
     },
     about: {
       sectionLabel: "01 — обо мне",
-      title: "Собираю образ так, чтобы он выглядел <em>дорого и точно</em>",
+      title: "Собираю образ так, чтобы он был <em>«про вас»</em>, выглядел стильно и дорого",
       paragraphs: [
-        "Я работаю с личным стилем, fashion-съёмками, коммерческими образами и визуально точной подачей. Для меня важны пропорции, фактура, посадка и ощущение дорогого цельного образа.",
+        "Я работаю с личным стилем, модными съёмками, коммерческими образами и визуально точной подачей. Для меня важны пропорции, фактура, посадка и ощущение продуманного цельного образа.",
         "В работе соединяю эстетику, характер клиента и задачу проекта: от персональной стилизации до контента для брендов и продуманных капсул под съёмки."
       ],
       meta: ["личный стиль", "съёмки / бренды / гардероб"],
@@ -2441,12 +2446,12 @@
           number: "05",
           eyebrow: "Направление",
           title: "Стрит / <em>выездные съёмки</em>",
-          description: "Городской свет, динамика локации и свободная fashion-пластика в кадре.",
+          description: "Городской свет, динамика локации и свободная пластика в кадре.",
           styles: [
             {
               number: "01",
               title: "Street mood",
-              description: "Свет улицы, движение и более свободная fashion-подача.",
+              description: "Свет улицы, движение и более свободная подача.",
               items: [
                 { label: "Фото 01", subtitle: "Street mood", image: "IMG_9852 (1).JPG" },
                 { label: "Фото 02", subtitle: "Street mood", image: "IMG_9852 (1).JPG" }
@@ -2462,7 +2467,6 @@
       description: "Напишите в Telegram, чтобы обсудить формат работы, даты и задачу.",
       note: "",
       items: [
-        { label: "Instagram*", value: "@yourname", href: "#", newTab: true },
         { label: "Telegram", value: "@username", href: "#", newTab: true },
         { label: "VK", value: "vk.com/username", href: "#", newTab: true },
         { label: "Телефон", value: "+7 900 000 00 00", href: "tel:+79000000000", newTab: false }
@@ -2473,8 +2477,8 @@
       role: "персональный стилист",
       legal: "Самозанятый / ИП\nИНН: 000000000000\nОГРНИП: 000000000000000\n\nОплата производится физическим лицам.\nНДС не облагается.",
       linksTitle: "Разделы",
-      contactsTitle: "Соцсети",
-      bottomLeft: "* Instagram — продукт компании Meta, признанной экстремистской организацией и запрещенной на территории РФ",
+      contactsTitle: "Контакты",
+      bottomLeft: "",
       bottomRight: ""
     }
   };
@@ -2603,19 +2607,54 @@
     if (!result.hero.title || hasAnyFragment(result.hero.title, ["Имя", "Фамилия"])) {
       result.hero.title = "Кристина <em>Diamond</em>";
     }
-    if (!result.hero.summary || hasAnyFragment(result.hero.summary, ["Лендинг собран как дорогая fashion-визитка"])) {
-      result.hero.summary = "Персональная стилизация и fashion-съёмки с точной подачей, собранным кадром и продуманным образом.";
+    if (!result.hero.summary || hasAnyFragment(result.hero.summary, ["Лендинг собран как дорогая fashion-визитка", "fashion-съёмки"])) {
+      result.hero.summary = "Персональная стилизация и модные съёмки с точной подачей, собранным кадром и продуманным образом.";
     }
     if (!Array.isArray(result.hero.stats) || !result.hero.stats.length || (result.hero.stats.length === 2 && hasAnyFragment(result.hero.stats[0]?.label, ["Формат"]) && hasAnyFragment(result.hero.stats[1]?.label, ["Подача"]))) {
-      result.hero.stats = [{ label: "Формат работы", value: "онлайн и офлайн" }];
+      result.hero.stats = [{ label: "Формат работы", value: "онлайн и оффлайн" }];
+    } else {
+      result.hero.stats = result.hero.stats.map((item, index) => {
+        if (index === 0 && hasAnyFragment(item?.value, ["онлайн и офлайн"])) {
+          return { ...item, value: "онлайн и оффлайн" };
+        }
+        return item;
+      });
     }
     result.hero.backgroundImage = normalizeImagePath(result.hero.backgroundImage) || "IMG_9852 (1).JPG";
     result.hero.photoCardImage = normalizeImagePath(result.hero.photoCardImage);
 
     result.about.image = normalizeImagePath(result.about.image) || "IMG_9852 (1).JPG";
+    if (!result.about.title || hasAnyFragment(result.about.title, ["Собираю образ так, чтобы он выглядел", "дорого и точно"])) {
+      result.about.title = "Собираю образ так, чтобы он был <em>«про вас»</em>, выглядел стильно и дорого";
+    }
+    if (!Array.isArray(result.about.paragraphs) || !result.about.paragraphs.length) {
+      result.about.paragraphs = [
+        "Я работаю с личным стилем, модными съёмками, коммерческими образами и визуально точной подачей. Для меня важны пропорции, фактура, посадка и ощущение продуманного цельного образа.",
+        "В работе соединяю эстетику, характер клиента и задачу проекта: от персональной стилизации до контента для брендов и продуманных капсул под съёмки."
+      ];
+    } else {
+      result.about.paragraphs = result.about.paragraphs.map((paragraph, index) => {
+        if (index === 0 && hasAnyFragment(paragraph, ["fashion-съёмками", "дорогого цельного образа"])) {
+          return "Я работаю с личным стилем, модными съёмками, коммерческими образами и визуально точной подачей. Для меня важны пропорции, фактура, посадка и ощущение продуманного цельного образа.";
+        }
+        return paragraph;
+      });
+    }
 
     if (!result.portfolio.description || hasAnyFragment(result.portfolio.description, ["Выбираете нужное направление"])) {
       result.portfolio.description = "Выберите направление и откройте подборки внутри раздела.";
+    }
+    if (Array.isArray(result.portfolio.categories)) {
+      result.portfolio.categories = result.portfolio.categories.map((category) => ({
+        ...category,
+        description: hasAnyFragment(category?.description, ["fashion-пластика"]) ? "Городской свет, динамика локации и свободная пластика в кадре." : category.description,
+        styles: Array.isArray(category?.styles)
+          ? category.styles.map((style) => ({
+              ...style,
+              description: hasAnyFragment(style?.description, ["fashion-подача"]) ? "Свет улицы, движение и более свободная подача." : style.description
+            }))
+          : category.styles
+      }));
     }
 
     if (!result.contacts.sectionLabel || hasAnyFragment(result.contacts.sectionLabel, ["контакты"])) {
@@ -2630,6 +2669,16 @@
     if (hasAnyFragment(result.contacts.note, ["ССЫЛКИ И НОМЕР"])) {
       result.contacts.note = "";
     }
+    if (Array.isArray(result.contacts.items)) {
+      result.contacts.items = result.contacts.items.filter((item) => !hasAnyFragment(item?.label, ["Instagram", "инст", "Соцсеть"]));
+    }
+    if (!Array.isArray(result.contacts.items) || !result.contacts.items.length) {
+      result.contacts.items = [
+        { label: "Telegram", value: "@username", href: "#", newTab: true },
+        { label: "VK", value: "vk.com/username", href: "#", newTab: true },
+        { label: "Телефон", value: "+7 900 000 00 00", href: "tel:+79000000000", newTab: false }
+      ];
+    }
 
     if (!result.footer.name || hasAnyFragment(result.footer.name, ["Имя", "Фамилия"])) {
       result.footer.name = "Кристина Diamond";
@@ -2637,13 +2686,11 @@
     if (!result.footer.role) {
       result.footer.role = "персональный стилист";
     }
-    if (!result.footer.contactsTitle || result.footer.contactsTitle === "Контакты") {
-      result.footer.contactsTitle = "Соцсети";
+    if (!result.footer.contactsTitle || hasAnyFragment(result.footer.contactsTitle, ["Соцсети", "Контакты"])) {
+      result.footer.contactsTitle = "Контакты";
     }
     result.footer.bottomRight = "";
-    if (!result.footer.bottomLeft || !hasAnyFragment(result.footer.bottomLeft, ["Meta", "Instagram"])) {
-      result.footer.bottomLeft = "* Instagram — продукт компании Meta, признанной экстремистской организацией и запрещенной на территории РФ";
-    }
+    result.footer.bottomLeft = "";
 
     return result;
   }
@@ -2985,15 +3032,6 @@
     const siteLinks = state.site.nav.map((item) => `<a href="#${escapeHtml(item.target)}">${escapeHtml(item.label)}</a>`).join("");
     function getSocialIcon(label) {
       const normalized = (label || "").toLowerCase();
-      if (normalized.includes("instagram")) {
-        return `
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5.2" fill="none" stroke="currentColor" stroke-width="1.8"></rect>
-            <circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.8"></circle>
-            <circle cx="17.15" cy="6.85" r="1.15" fill="currentColor"></circle>
-          </svg>
-        `;
-      }
       if (normalized.includes("telegram")) {
         return `
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -3015,19 +3053,18 @@
           </svg>
         `;
       }
-      return `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <circle cx="12" cy="12" r="3.2" fill="currentColor"></circle>
-        </svg>
-      `;
+      return "";
     }
 
-    const socialIcons = state.contacts.items.map((item) => {
+    const socialIcons = state.contacts.items
+      .filter((item) => /telegram|vk|телефон|phone/i.test(item.label || ""))
+      .map((item) => {
       const icon = getSocialIcon(item.label);
       const attrs = item.href && item.href !== "#"
         ? `href="${escapeHtml(item.href)}" ${item.newTab ? 'target="_blank" rel="noreferrer noopener"' : ""}`
         : 'href="#"';
-      return `<a class="footer__social-link" ${attrs} aria-label="${escapeHtml(item.label)}">${icon}</a>`;
+      const title = item.value ? `${item.label}: ${item.value}` : item.label;
+      return `<a class="footer__social-link" ${attrs} aria-label="${escapeHtml(item.label)}" title="${escapeHtml(title)}">${icon}</a>`;
     }).join("");
 
     return `
