@@ -2171,7 +2171,7 @@
   </aside>
 
 <script>
-  const STORAGE_KEY = "stylistLandingConfigV3";
+  const STORAGE_KEY = "stylistLandingConfigV5";
 
   const defaultConfig = {
     site: {
@@ -2500,7 +2500,10 @@
                 { label: "Фото 01", subtitle: "Group styling", image: "групповая/7049c76a-0ba2-45d4-8a44-b42d32bd76ae.jpg" },
                 { label: "Фото 02", subtitle: "Group styling", image: "групповая/772edaee-0872-407b-bbe4-707a8d7de9d3.jpg" },
                 { label: "Фото 03", subtitle: "Group styling", image: "групповая/97d820ba-3e2c-4954-926f-b4129f16ae1c.jpg" },
-                { label: "Фото 04", subtitle: "Group styling", image: "групповая/c94bd221-248e-416f-8a6f-9c2e9cdc8f65.jpg" }
+                { label: "Фото 04", subtitle: "Group styling", image: "групповая/c94bd221-248e-416f-8a6f-9c2e9cdc8f65.jpg" },
+                { label: "Фото 05", subtitle: "Group styling", image: "групповая/IMG_3181.JPG" },
+                { label: "Фото 06", subtitle: "Group styling", image: "групповая/IMG_3182.JPG" },
+                { label: "Фото 07", subtitle: "Group styling", image: "групповая/IMG_3183.JPG" }
               ]
             },
             {
@@ -2754,7 +2757,11 @@
         if (defaultCategory && updatedCategory.styles) {
           updatedCategory.styles = updatedCategory.styles.map((style, styleIdx) => {
             const defaultStyle = defaultCategory.styles[styleIdx];
-            if (defaultStyle && (style.items.length !== defaultStyle.items.length || style.items.some(item => item.image.includes("IMG_9852 (1).JPG") || item.image.includes("09041bb7")))) {
+            const isDifferent = defaultStyle && (
+              style.items.length !== defaultStyle.items.length || 
+              style.items.some((item, i) => item.image !== defaultStyle.items[i]?.image)
+            );
+            if (isDifferent) {
               return { ...style, items: defaultStyle.items, title: defaultStyle.title };
             }
             return style;
