@@ -2171,7 +2171,7 @@
   </aside>
 
 <script>
-  const STORAGE_KEY = "stylistLandingConfigV5";
+  const STORAGE_KEY = "stylistLandingConfigV6";
 
   const defaultConfig = {
     site: {
@@ -3031,21 +3031,9 @@
     `;
   }
 
-  function expandCarouselItems(items, minimum = 6) {
+  function expandCarouselItems(items, minimum = 1) {
     const normalized = (items || []).filter((item) => item && (item.image || item.label || item.subtitle));
-    if (!normalized.length) return [];
-    if (normalized.length >= minimum) return normalized;
-
-    const expanded = [...normalized];
-    while (expanded.length < minimum) {
-      const base = normalized[expanded.length % normalized.length];
-      expanded.push({
-        ...base,
-        label: `Фото ${String(expanded.length + 1).padStart(2, "0")}`,
-        subtitle: base.subtitle || base.label || ""
-      });
-    }
-    return expanded;
+    return normalized;
   }
 
   function renderPortfolioCategory(category, index) {
