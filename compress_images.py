@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-def compress_images(directory, max_size=(1600, 1600)):
+def compress_images(directory, max_size=(1920, 1920)):
     if not os.path.exists(directory):
         print(f"Directory {directory} not found")
         return
@@ -16,7 +16,7 @@ def compress_images(directory, max_size=(1600, 1600)):
                     temp_path = filepath + ".tmp.jpg"
                     if img.mode in ("RGBA", "P"):
                         img = img.convert("RGB")
-                    img.save(temp_path, "JPEG", quality=85, optimize=True)
+                    img.save(temp_path, "JPEG", quality=95, optimize=True)
                 os.replace(temp_path, filepath)
                 print(f"Compressed {directory}/{filename}: {width}x{height} -> {img.size[0]}x{img.size[1]}")
             except Exception as e:
