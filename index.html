@@ -2130,20 +2130,6 @@
       </div>
     </div>
 
-    <!-- Модальное окно политики конфиденциальности -->
-    <div class="lightbox" id="privacyPolicyModal">
-      <div class="lightbox__content" style="background: white; padding: 40px; border-radius: 20px; max-width: 800px; max-height: 80vh; overflow-y: auto; color: #171311; cursor: default;" onclick="event.stopPropagation()">
-        <h2 style="font-family: var(--font-display); font-size: 32px; margin-bottom: 20px;">Политика конфиденциальности</h2>
-        <div style="font-size: 14px; line-height: 1.6; display: grid; gap: 15px;">
-          <p>Настоящая Политика обработки персональных данных составлена в соответствии с требованиями Федерального закона от 27.07.2006. №152-ФЗ «О персональных данных».</p>
-          <p><strong>1. Общие положения</strong><br>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных.</p>
-          <p><strong>2. Персональные данные</strong><br>Мы не собираем ваши данные через формы на этом сайте напрямую. Все взаимодействие происходит через внешние мессенджеры (Telegram, WhatsApp) в соответствии с их политиками безопасности.</p>
-          <p><strong>3. Использование данных</strong><br>Ваши контактные данные используются исключительно для связи с вами по вашему запросу и не передаются третьим лицам.</p>
-          <p><strong>4. Заключительные положения</strong><br>Вы можете получить любые разъяснения по интересующим вопросам, обратившись к Оператору через контакты, указанные в подвале сайта.</p>
-        </div>
-        <button class="admin-button" style="margin-top: 30px; width: 100%;" onclick="document.getElementById('privacyPolicyModal').classList.remove('is-open')">Понятно</button>
-      </div>
-    </div>
   </div>
 
   <button class="admin-trigger" id="adminTrigger" type="button" aria-label="Открыть админку">
@@ -2567,17 +2553,18 @@
       items: [
         { label: "Telegram", value: "@username", href: "#", newTab: true },
         { label: "VK", value: "vk.com/username", href: "#", newTab: true },
+        { label: "WhatsApp", value: "+7 900 000 00 00", href: "#", newTab: true },
         { label: "Телефон", value: "+7 900 000 00 00", href: "tel:+79000000000", newTab: false }
       ]
     },
     footer: {
       name: "Кристина\nDiamond",
-      role: "персональный стилист",
-      legal: "Самозанятый / ИП\nИНН: 000000000000\nОГРНИП: 000000000000000\n\nОплата производится физическим лицам.\nНДС не облагается.",
+      role: "Персональный стилист",
+      legal: "Услуги оказывает физическое лицо.\nКонтакты: Telegram / VK / WhatsApp\nГород: Самара",
       linksTitle: "Разделы",
       contactsTitle: "Контакты",
       bottomLeft: "",
-      bottomRight: ""
+      bottomRight: "© 2026 Кристина Diamond"
     }
   };
   
@@ -2793,20 +2780,22 @@
       result.contacts.items = [
         { label: "Telegram", value: "@username", href: "#", newTab: true },
         { label: "VK", value: "vk.com/username", href: "#", newTab: true },
+        { label: "WhatsApp", value: "+7 900 000 00 00", href: "#", newTab: true },
         { label: "Телефон", value: "+7 900 000 00 00", href: "tel:+79000000000", newTab: false }
       ];
+    } else if (!result.contacts.items.some((item) => /whatsapp/i.test(item.label || ""))) {
+      result.contacts.items.splice(2, 0, { label: "WhatsApp", value: "+7 900 000 00 00", href: "#", newTab: true });
     }
 
     if (!result.footer.name || hasAnyFragment(result.footer.name, ["Имя", "Фамилия"])) {
       result.footer.name = "Кристина Diamond";
     }
-    if (!result.footer.role) {
-      result.footer.role = "персональный стилист";
-    }
+    result.footer.role = "Персональный стилист";
+    result.footer.legal = "Услуги оказывает физическое лицо.\nКонтакты: Telegram / VK / WhatsApp\nГород: Самара";
     if (!result.footer.contactsTitle || hasAnyFragment(result.footer.contactsTitle, ["Соцсети", "Контакты"])) {
       result.footer.contactsTitle = "Контакты";
     }
-    result.footer.bottomRight = "";
+    result.footer.bottomRight = "© 2026 Кристина Diamond";
     result.footer.bottomLeft = "";
 
     return result;
@@ -3151,6 +3140,14 @@
           </svg>
         `;
       }
+      if (normalized.includes("whatsapp")) {
+        return `
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.6 19.4 5.7 16.1A7.6 7.6 0 1 1 8 18.2L4.6 19.4Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path>
+            <path d="M9.2 8.4c.2-.42.38-.43.68-.43h.52c.17 0 .42.06.55.31.2.38.7 1.68.76 1.8.06.13.1.28.02.45-.08.17-.13.27-.26.42-.13.15-.27.34-.38.45-.13.13-.27.27-.12.53.15.25.66 1.08 1.42 1.75.98.87 1.78 1.15 2.05 1.28.25.13.4.1.56-.06.17-.2.64-.75.81-1 .17-.25.34-.21.58-.13.25.08 1.57.74 1.84.87.27.13.45.2.52.31.06.13.06.72-.17 1.42-.23.7-1.34 1.3-1.87 1.35-.48.04-1.09.06-1.76-.11-.4-.11-.93-.3-1.6-.59-2.8-1.2-4.64-3.99-4.78-4.17-.15-.2-1.14-1.52-1.14-2.9s.72-2.05.97-2.33Z" fill="currentColor"></path>
+          </svg>
+        `;
+      }
       if (normalized.includes("телефон") || normalized.includes("phone")) {
         return `
           <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -3162,7 +3159,7 @@
     }
 
     const socialIcons = state.contacts.items
-      .filter((item) => /telegram|vk|телефон|phone/i.test(item.label || ""))
+      .filter((item) => /telegram|vk|whatsapp|телефон|phone/i.test(item.label || ""))
       .map((item) => {
       const icon = getSocialIcon(item.label);
       const attrs = item.href && item.href !== "#"
@@ -3193,10 +3190,7 @@
         </div>
       </div>
       <div class="footer__bottom">
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-          <span id="secretTrigger">${escapeHtml(state.footer.bottomLeft)}</span>
-          <a href="javascript:void(0)" onclick="document.getElementById('privacyPolicyModal').classList.add('is-open')" style="opacity: 0.6; text-decoration: underline;">Политика конфиденциальности</a>
-        </div>
+        <span id="secretTrigger">${escapeHtml(state.footer.bottomLeft)}</span>
         ${state.footer.bottomRight ? `<span>${escapeHtml(state.footer.bottomRight)}</span>` : ""}
       </div>
     `;
