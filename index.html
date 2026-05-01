@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Кристина Diamond — стилист</title>
+<title>Кристина Даймонд — стилист</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 L85 35 L50 95 L15 35 Z' fill='none' stroke='%23171311' stroke-width='4'/%3E%3Cpath d='M15 35 L85 35 M30 35 L50 5 L70 35 M50 5 L50 95 M30 35 L50 95 L70 35' fill='none' stroke='%23171311' stroke-width='2'/%3E%3C/svg%3E">
 <meta name="description" content="Премиальный лендинг-визитка стилиста: услуги, портфолио и контакты.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2161,9 +2161,9 @@
 
   const defaultConfig = {
     site: {
-      title: "Кристина Diamond — стилист",
+      title: "Кристина Даймонд — стилист",
       description: "Премиальный лендинг-визитка стилиста: услуги, портфолио и контакты.",
-      brandName: "Кристина Diamond",
+      brandName: "Кристина Даймонд",
       brandRole: "персональный стилист",
       nav: [
         { label: "Обо мне", target: "about" },
@@ -2183,7 +2183,7 @@
     },
     hero: {
       eyebrow: "Персональный стилист",
-      title: "Кристина <em>Diamond</em>",
+      title: "Кристина <em>Даймонд</em>",
       summary: "Персональная стилизация и модные съёмки с точной подачей, собранным кадром и продуманным образом.",
       stats: [
         { label: "Формат работы", value: "онлайн и очно" }
@@ -2344,7 +2344,7 @@
         index: "07",
         navLabel: "Бренды",
         title: "Стилизация для <em>брендов</em>",
-        summary: "Коммерческий styling: мудборд, достилизация аксессуарами и сбор образов на площадке.",
+        summary: "Коммерческая стилизация: мудборд, достилизация аксессуарами и сбор образов на площадке.",
         priceMain: "5 000 ₽/час",
         priceNote: "до 10 образов",
         includes: [
@@ -2416,7 +2416,7 @@
           styles: [
             {
               number: "01",
-              title: "Menswear",
+              title: "Мужской стиль",
               description: "Сдержанная и фактурная мужская подача.",
               items: [
                 { label: "Фото 01", subtitle: "Menswear", image: "мужская/80328240-f8c7-40a6-8b81-69b9ac42a80c.jpg" },
@@ -2517,7 +2517,7 @@
           styles: [
             {
               number: "01",
-              title: "Street mood",
+              title: "Уличное настроение",
               description: "Свет улицы, движение и более свободная подача.",
               items: [
                 { label: "Фото 01", subtitle: "Street mood", image: "стрит/IMG_1354.JPG" },
@@ -2558,13 +2558,13 @@
       ]
     },
     footer: {
-      name: "Кристина\nDiamond",
+      name: "Кристина\nДаймонд",
       role: "Персональный стилист",
       legal: "Индивидуальный предприниматель Гридяева Кристина Станиславовна\nИНН: 631229127131\nОГРНИП: 325632700012199\nЮридический адрес: 443095, Россия, Самарская обл., г. Самара, ул. Стара Загора, д. 224, кв. 13",
       linksTitle: "Разделы",
       contactsTitle: "Контакты",
       bottomLeft: "",
-      bottomRight: "© 2026 Кристина Diamond"
+      bottomRight: "© 2026 Кристина Даймонд"
     }
   };
   
@@ -2668,13 +2668,13 @@
     result.portfolio = migratePortfolio(result.portfolio);
 
     if (!result.site.title || hasAnyFragment(result.site.title, ["Имя Фамилия", "встроенная админка"])) {
-      result.site.title = "Кристина Diamond — стилист";
+      result.site.title = "Кристина Даймонд — стилист";
     }
     if (!result.site.description || hasAnyFragment(result.site.description, ["встроенная админка"])) {
       result.site.description = "Премиальный лендинг-визитка стилиста: услуги, портфолио и контакты.";
     }
     if (!result.site.brandName || hasAnyFragment(result.site.brandName, ["Имя", "Фамилия"])) {
-      result.site.brandName = "Кристина Diamond";
+      result.site.brandName = "Кристина Даймонд";
     }
     if (!result.site.brandRole) {
       result.site.brandRole = "персональный стилист";
@@ -2691,7 +2691,7 @@
       result.hero.eyebrow = "Персональный стилист";
     }
     if (!result.hero.title || hasAnyFragment(result.hero.title, ["Имя", "Фамилия"])) {
-      result.hero.title = "Кристина <em>Diamond</em>";
+      result.hero.title = "Кристина <em>Даймонд</em>";
     }
     if (!result.hero.summary || hasAnyFragment(result.hero.summary, ["Лендинг собран как дорогая fashion-визитка", "fashion-съёмки"])) {
       result.hero.summary = "Персональная стилизация и модные съёмки с точной подачей, собранным кадром и продуманным образом.";
@@ -2731,6 +2731,16 @@
       result.portfolio.description = "Выберите направление и откройте подборки внутри раздела. Фото и видео публикуются в портфолио только с согласия клиента.";
     }
     if (Array.isArray(result.portfolio.categories)) {
+      const portfolioGlossary = {
+        "Sport chic": "Спортшик",
+        "Feminine": "Женственность",
+        "Experimental": "Творчество",
+        "Menswear": "Мужской стиль",
+        "Soft mood": "Нежное настроение",
+        "Group styling": "Групповая стилизация",
+        "Family": "Семейная съемка",
+        "Street mood": "Уличное настроение"
+      };
       result.portfolio.categories = result.portfolio.categories.map((category, catIdx) => {
         let updatedCategory = {
           ...category,
@@ -2738,7 +2748,14 @@
           styles: Array.isArray(category?.styles)
             ? category.styles.map((style) => ({
                 ...style,
-                description: hasAnyFragment(style?.description, ["fashion-подача"]) ? "Свет улицы, движение и более свободная подача." : style.description
+                title: portfolioGlossary[style?.title] || style?.title,
+                description: hasAnyFragment(style?.description, ["fashion-подача"]) ? "Свет улицы, движение и более свободная подача." : style.description,
+                items: Array.isArray(style?.items)
+                  ? style.items.map((item) => ({
+                      ...item,
+                      subtitle: portfolioGlossary[item?.subtitle] || item?.subtitle
+                    }))
+                  : style.items
               }))
             : category.styles
         };
@@ -2752,7 +2769,14 @@
               style.items.some((item, i) => item.image !== defaultStyle.items[i]?.image)
             );
             if (isDifferent) {
-              return { ...style, items: defaultStyle.items, title: defaultStyle.title };
+              return {
+                ...style,
+                title: portfolioGlossary[defaultStyle.title] || defaultStyle.title,
+                items: defaultStyle.items.map((item) => ({
+                  ...item,
+                  subtitle: portfolioGlossary[item.subtitle] || item.subtitle
+                }))
+              };
             }
             return style;
           });
@@ -2769,6 +2793,14 @@
     }
     if (!result.contacts.description || hasAnyFragment(result.contacts.description, ["Финальный блок сделан спокойно", "обсудим ваш запрос"])) {
       result.contacts.description = "Напишите в Telegram, чтобы обсудить формат работы, даты и задачу.";
+    }
+    if (Array.isArray(result.services)) {
+      result.services = result.services.map((service) => ({
+        ...service,
+        summary: typeof service?.summary === "string"
+          ? service.summary.replace("Коммерческий styling", "Коммерческая стилизация")
+          : service?.summary
+      }));
     }
     if (hasAnyFragment(result.contacts.note, ["ССЫЛКИ И НОМЕР"])) {
       result.contacts.note = "";
@@ -2788,14 +2820,14 @@
     }
 
     if (!result.footer.name || hasAnyFragment(result.footer.name, ["Имя", "Фамилия"])) {
-      result.footer.name = "Кристина Diamond";
+      result.footer.name = "Кристина Даймонд";
     }
     result.footer.role = "Персональный стилист";
     result.footer.legal = "Индивидуальный предприниматель Гридяева Кристина Станиславовна\nИНН: 631229127131\nОГРНИП: 325632700012199\nЮридический адрес: 443095, Россия, Самарская обл., г. Самара, ул. Стара Загора, д. 224, кв. 13";
     if (!result.footer.contactsTitle || hasAnyFragment(result.footer.contactsTitle, ["Соцсети", "Контакты"])) {
       result.footer.contactsTitle = "Контакты";
     }
-    result.footer.bottomRight = "© 2026 Кристина Diamond";
+    result.footer.bottomRight = "© 2026 Кристина Даймонд";
     result.footer.bottomLeft = "";
 
     return result;
